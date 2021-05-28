@@ -1,1 +1,74 @@
-<div> this is the dashboard</div>
+<nav style="height:52px;" class="hs-nav">
+    <!--navbar-->
+
+
+    <button class="btn-steal btn-bento d-lg-none " id="hs-ham" >
+        <span class="square"></span>
+        <span class="square"></span>
+        <span class="square"></span>
+        <span class="square"></span>
+        <span class="square"></span>
+        <span class="square"></span>
+        <span class="square"></span>
+        <span class="square"></span>
+        <span class="square"></span>
+    </button>
+
+
+
+    <div class="profile">
+        <!--flex-2-->
+
+        <div class="face-container"><img class="img-fluid" src="/dist/ICONS/Dashboard/elfo.jpg" alt="Emp Face"></div>
+
+        <div class="hs-drop-container">
+            <a href="#" class="emp-name">_DisplayName_</a>
+            <ul class="hs-drop-list">
+                <li><a class="d-flex align-center b-fix" href="#"><i class="fas fa-user "></i><span>Profile</span></a>
+                </li>
+                <li><a class="d-flex align-center" href="#"><i class="fas fa-cog "></i><span>Settings</span></a></li>
+                <hr class="dashed">
+                <li><a id="s-out" class="d-flex align-center red" href="#"><i class="fas fa-power-off"></i><span>Sign
+                            Out</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--navbar end-->
+
+
+
+    <!--sidebar menu-->
+<div class="hs-sidebar bg-dark text-white" id="hs-sidebar">
+
+    <a href="#" class="text-decoration-none pb-3 d-flex justify-content-center "><img
+            style="width:90px; height:auto; margin-left:10px"
+            src="/dist/ICONS/e-port/container-only.png" alt="to be filled"></a>
+
+    
+    <ul class="nav nav-pills my-2" id="small-list">
+
+        <li><a class="nav-link text-white active" data-bind="click:function(d,e){$component._selectPage('dash-schedule')}"><i class="fas fa-calendar-alt fa-fw"></i><span>Schedule</span></a>
+        </li>
+        <li><a class="nav-link text-white" data-bind="click:function(d,e){$component._selectPage('')}"><i class="fas fa-tshirt fa-fw"></i><span>Clothing</span></a></li>
+        <li><a class="nav-link text-white" data-bind="click:function(d,e){$component._selectPage('')}"><i class="fas fa-certificate fa-fw"></i><span>Certificates</span></a>
+        </li>
+        <li><a class="nav-link text-white " data-bind="click:function(d,e){$component._selectPage('')}"><i class="fas fa-comments fa-fw"></i><span>Contact</span></a></li>
+    </ul>
+
+
+
+
+</div>
+<!--sidebar menu end-->
+
+   <!--ko if:$component.dash_content -->
+
+<div class="content"  data-bind="component:{name:$component.dash_content, params:{}}" ></div>
+     <!-- /ko -->
+
+ 
+    <!-- <div data-bind="component:{name:$component.dash_content, params:{}}"></div>
+   
+    
+    </div> -->

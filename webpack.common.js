@@ -3,31 +3,31 @@ const BomPlugin = require('webpack-utf8-bom');
 
 const libsPath = path.resolve(__dirname, "_libs");
 const appPath = path.resolve(__dirname, "app");
-const componentsPath = path.resolve(__dirname, "app/components");
+const componentsPath = path.resolve(__dirname, "app/pages/Dashboard");
 const pagesPath = path.resolve(__dirname, "app/pages");
 
 module.exports = {
     entry: {
-        thesis: './app/main.js'  //entry point
+        thesis: './app/main.js' 
     },
     output: {
-        path: path.resolve(__dirname, './dist/_js'),  //path resolved for main.js+imports
-        filename: '[name].js'   // [name] aka thesis
+        path: path.resolve(__dirname, './dist/_js'), 
+        filename: '[name].js'  
     },
     module: {
         rules: [{
-            test: /\.html$/,  //gia katalhksh html
+            test: /\.html$/,  
             use: [{
-                loader: 'html-loader',  //use ton html loader
+                loader: 'html-loader',  
                 options: {
-                    minimize: false  //min kaneis minimize!
+                    minimize: false 
                 }
             }]
         }, {
-            test: /\.svg$/,                
+            test: /\.svgcc$/,                
             loader: 'svg-inline-loader'   
         }, {
-            test: /\.(png|jpg|gif)$/,    
+            test: /\.(pngcc|jpgccc|gifccc)$/,    
             exclude: /\.(html)$/,     
             use: [{
                 loader: 'file-loader',   
@@ -37,7 +37,7 @@ module.exports = {
     },
 
     resolve: {
-        alias: {  //alias sta paths gia eykola imports
+        alias: {  
             "app": appPath,
             "components": componentsPath,
             "pages": pagesPath,
@@ -45,9 +45,9 @@ module.exports = {
             "jQuery": "jquery",
             "jquery-ui": libsPath + "/jquery-ui/jquery-ui.min.js",
             "knockout": libsPath + "/knockout/knockout.js",
-            "bootstrap":libsPath + "/bootstrap/bootstrap.min.js",
-            "bootstrap-esm":libsPath + "/bootstrap/bootstrap.esm.min.js",
-            "bootstrap-bundle":libsPath + "/bootstrap/bootstrap.bundle.min.js"
+            // "bootstrap":libsPath + "/bootstrap/bootstrap.min.js",
+            // "bootstrap-esm":libsPath + "/bootstrap/bootstrap.esm.min.js",
+            // "bootstrap-bundle":libsPath + "/bootstrap/bootstrap.bundle.min.js"
 
         }
     },
@@ -65,7 +65,7 @@ module.exports = {
                     chunks: 'all'
                 },
                 commons: {
-                    test: /[\\/]_libs\\(jquery|jquery-ui|knockout|bootstrap|bootstrap-esm|bootstrap-bundle)[\\/]/,  //vendor biblio8hkes
+                    test: /[\\/]_libs\\(jquery|jquery-ui|knockout)[\\/]/,  //vendor biblio8hkes
                     name: 'vendors',
                     chunks: 'all'
                 }

@@ -3,7 +3,12 @@ import template from "./view.html"
 
 class VM{
     constructor(params){
-        this.app=params;
+        this.params=params;
+        this.dash_content=ko.observable();
+    }
+
+    _selectPage(name){
+        this.dash_content(name);
     }
 }
 

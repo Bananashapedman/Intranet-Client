@@ -1,5 +1,6 @@
-import ko from "knockout"
 import "./Site/vm"
 import "./Dashboard/vm"
 import "./Login/vm"
 import "./_PageRoot/vm"
+import "./Dashboard/DashComponents/Schedule/vm"
+import "./Dashboard/DashComponents/Clothing/vm"
