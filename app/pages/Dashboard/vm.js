@@ -4,12 +4,52 @@ import template from "./view.html"
 class VM{
     constructor(params){
         this.params=params;
-        this.dash_content=ko.observable('dash-content');
+        this.dash_content=ko.observable('dash-schedule');
     }
 
-    _selectPage(name){
+    _selectPage(ele, name){
+        
+        
         this.dash_content(name);
+        this._selectedMenuItem(ele);
     }
+
+    //================================================
+
+    _selectedMenuItem(ele){
+        
+        let parent=ele.parentElement.parentElement;
+        let children=parent.querySelectorAll('a');
+        children.forEach(child=>{
+            child.classList.remove('active');
+           
+        })
+
+        ele.classList.add('active');
+    }
+
+
+    //============================================
+
+    _ham(){
+        const cover=document.getElementById('cover');
+        const sidebar=document.getElementById('hs-sidebar');
+        sidebar.classList.add('open');
+        cover.classList.remove('d-none');
+        }
+
+    _coverCollapse(ele){
+        ele.classList.add('d-none');
+        document.getElementById('hs-sidebar').classList.remove('open');
+    
+
+    }
+
+
+
+   
+
+
 }
 
 
@@ -19,3 +59,11 @@ ko.components.register("host-dashboard",{
     template:template
     
     });
+
+
+
+
+
+
+
+    

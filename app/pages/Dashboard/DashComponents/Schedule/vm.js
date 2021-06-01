@@ -7,7 +7,7 @@ class VM{
 
     constructor(params){
    
-
+        this.translate=ko.observable();
         this.ar = [
             { "Date": "2021-05-01", "z": 1, "t": 1 },
             { "Date": "2021-05-02", "z": 1, "t": 1 },
@@ -33,6 +33,7 @@ class VM{
 
         this.workCollection = new Work_Collection(this.ar);
         this._adjustData();
+        
     }
 
 
@@ -40,6 +41,18 @@ class VM{
         this.workCollection.build_Days();
         this.workCollection.get_month();
     }
+
+    _fixedHeader(ele){
+        
+        var translate = "translate(0,"+ele.scrollTop+"px)";
+        document.querySelector("thead").style.transform = translate;
+
+    }
+
+
+   
+ 
+
 
 
 
@@ -51,3 +64,6 @@ ko.components.register("dash-schedule",{
     viewModel:VM,
     template:template
 })
+
+
+

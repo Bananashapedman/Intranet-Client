@@ -11,7 +11,7 @@
             </span>
         </div>
     </div>
-    <div id="table-flow" class="table-flow container-fluid">
+    <div id="table-flow" class="table-flow container-fluid" data-bind="event:{scroll:function(d,e){$component._fixedHeader($element)}}">
         <table id="hs-table" class="table table-responsive table-dark table-hover table-striped">
             <thead>
                 <tr>
