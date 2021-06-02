@@ -23,8 +23,8 @@
                 </tr>
             </thead>
             <tbody>
-
-                <!-- ko foreach:$component.workCollection.work_list -->
+                 <!-- ko if:$component.workCollection -->
+                <!-- ko foreach:$component.workCollection().work_list -->
                 <tr>
                     <td data-bind="text: day_num"></td>
                     <td data-bind="text: day_string"></td>
@@ -33,6 +33,8 @@
                     <td><i class="fas fa-highlighter"></i></td>
                 </tr>
                 <!-- /ko -->
+                <!-- /ko -->
+
             </tbody>
         </table>
     </div>

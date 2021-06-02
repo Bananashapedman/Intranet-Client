@@ -12,6 +12,7 @@ class VM{
         
         this.dash_content(name);
         this._selectedMenuItem(ele);
+        this._collapseLarge();
     }
 
     //================================================
@@ -43,6 +44,11 @@ class VM{
         document.getElementById('hs-sidebar').classList.remove('open');
     
 
+    }
+
+    _collapseLarge(){
+        document.getElementById('hs-sidebar').classList.remove('open');
+        document.getElementById('cover').classList.add('d-none');
     }
 
 

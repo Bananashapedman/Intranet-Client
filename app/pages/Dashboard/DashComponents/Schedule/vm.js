@@ -33,8 +33,43 @@ class VM{
 
         this.workCollection = new Work_Collection(this.ar);
         this._adjustData();
+        this.workCollection = ko.observable();
+        this._fetchProgram();
         
     }
+
+    async _fetchProgram() {
+        debugger;
+       let response = await this._callFetchService(this.endPoint);
+       
+       let ar=JSON.parse(response[0].Program);
+
+       this.workCollection(new Work_Collection(ar));
+       this._adjustData();
+   }   
+
+   async _callFetchService(request) {
+    try {
+        let options = {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                Authorization: "Basic " + btoa("user-esimis"+":"+"#esimis!123")
+            }
+        }
+        let response = await fetch(request, options);
+        if (response.ok) {
+            let serviceData = await response.json();
+            console.log(serviceData);
+            return serviceData;
+        }
+        else
+            throw Error(response.statusText);
+    } catch (e) {
+        alert(e.message);
+    }
+}
+
 
 
     _adjustData() {
