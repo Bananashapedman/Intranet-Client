@@ -74,8 +74,8 @@ class VM{
 
 
     _adjustData() {
-        this.workCollection.build_Days();
-        this.workCollection.get_month();
+        this.workCollection().build_Days();
+        this.workCollection().get_month();
     }
 
     _fixedHeader(ele){
