@@ -7,43 +7,42 @@ class VM{
 
     constructor(params){
    
-        this.translate=ko.observable();
+      
 
+        this.endPoint = "https://zeus.eaddon.local:9999/Thesis/GetProgram/1/2021/5";
 
-        //USE THIS IF SERVICE NOT AVAILABLE
-        // this.ar = [                                    
-        //     { "Date": "2021-05-01", "z": 1, "t": 1 },
-        //     { "Date": "2021-05-02", "z": 1, "t": 1 },
-        //     { "Date": "2021-05-03", "z": 1, "t": 1 },
-        //     { "Date": "2021-05-04", "z": 1, "t": 0 },
-        //     { "Date": "2021-05-05", "z": 1, "t": 0 },
-        //     { "Date": "2021-05-06", "z": 1, "t": 1 },
-        //     { "Date": "2021-05-07", "z": 2, "t": 1 },
-        //     { "Date": "2021-05-08", "z": 2, "t": 1 },
-        //     { "Date": "2021-05-09", "z": 2, "t": 1 },
-        //     { "Date": "2021-05-10", "z": 3, "t": 0 },
-        //     { "Date": "2021-05-11", "z": 3, "t": 1 },
-        //     { "Date": "2021-05-12", "z": 3, "t": 1 },
-        //     { "Date": "2021-05-05", "z": 1, "t": 0 },
-        //     { "Date": "2021-05-06", "z": 1, "t": 1 },
-        //     { "Date": "2021-05-07", "z": 2, "t": 1 },
-        //     { "Date": "2021-05-08", "z": 2, "t": 1 },
-        //     { "Date": "2021-05-09", "z": 2, "t": 1 },
-        //     { "Date": "2021-05-10", "z": 3, "t": 0 },
-        //     { "Date": "2021-05-11", "z": 3, "t": 1 },
-        //     { "Date": "2021-05-12", "z": 3, "t": 1 }
-        // ];
+    
+        this.ar = [                                    
+            { "Date": "2021-05-01", "z": 1, "t": 1 },
+            { "Date": "2021-05-02", "z": 1, "t": 1 },
+            { "Date": "2021-05-03", "z": 1, "t": 1 },
+            { "Date": "2021-05-04", "z": 1, "t": 0 },
+            { "Date": "2021-05-05", "z": 1, "t": 0 },
+            { "Date": "2021-05-06", "z": 1, "t": 1 },
+            { "Date": "2021-05-07", "z": 2, "t": 1 },
+            { "Date": "2021-05-08", "z": 2, "t": 1 },
+            { "Date": "2021-05-09", "z": 2, "t": 1 },
+            { "Date": "2021-05-10", "z": 3, "t": 0 },
+            { "Date": "2021-05-11", "z": 3, "t": 1 },
+            { "Date": "2021-05-12", "z": 3, "t": 1 },
+            { "Date": "2021-05-05", "z": 1, "t": 0 },
+            { "Date": "2021-05-06", "z": 1, "t": 1 },
+            { "Date": "2021-05-07", "z": 2, "t": 1 },
+            { "Date": "2021-05-08", "z": 2, "t": 1 },
+            { "Date": "2021-05-09", "z": 2, "t": 1 },
+            { "Date": "2021-05-10", "z": 3, "t": 0 },
+            { "Date": "2021-05-11", "z": 3, "t": 1 },
+            { "Date": "2021-05-12", "z": 3, "t": 1 }
+        ];
 
-        // this.workCollection = new Work_Collection(this.ar);
         
         this.workCollection = ko.observable();
-        this._fetchProgram();
-        this._adjustData();
+        this._fetchProgram(); 
         
     }
 
     async _fetchProgram() {
-        debugger;
+       
        let response = await this._callFetchService(this.endPoint);
        let ar=JSON.parse(response[0].Program);
        this.workCollection(new Work_Collection(ar));
@@ -85,14 +84,7 @@ class VM{
         document.querySelector("thead").style.transform = translate;
 
     }
-
-
    
- 
-
-
-
-
 }
 
 
