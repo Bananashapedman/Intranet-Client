@@ -66,7 +66,8 @@ class VM{
         }
         else
             throw Error(response.statusText);
-    } catch (e) {
+    }
+     catch (e) {
         alert(e.message);
     }
 }
