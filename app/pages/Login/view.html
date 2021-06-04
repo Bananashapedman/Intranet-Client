@@ -1,3 +1,4 @@
+<div>
 <div style="margin-bottom:100px;">This is The login page!</div>
 
 
@@ -9,10 +10,12 @@
 
 </div>
 
-<button class="mt-5" data-bind="click:$component._onLogin()">Fetch!</button>
+<button class="mt-5" data-bind="click:$component._onLogin.bind($component)">Fetch!</button>
 
 <button data-bind="click:$component.navigateDashboard.bind($component)">Go to Dashboard!</button>
 
 
 
 <div class="mt-5" data-bind="text:ID"></div>
+
+</div>
