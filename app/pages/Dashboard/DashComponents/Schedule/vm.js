@@ -1,25 +1,39 @@
 import ko from 'knockout'
 import template from "./view.html"
 import { Work_Collection } from "./Work_Collection"
+import {config} from "app/Helper"
 
 
 class VM{
 
     constructor(params){
-   
-      
 
-        this.endPoint = "https://zeus.eaddon.local:9999/Thesis/GetProgram/1/2021/5";
-
-        
         this.workCollection = ko.observable();
+        this.show_month=ko.observable();              
+        this.endPoint= "https://zeus.eaddon.local:9999/Thesis/GetProgram";
+        
         this._fetchProgram(); 
         
     }
 
-    async _fetchProgram() {
-       
-       let response = await this._callFetchService(this.endPoint);
+    async _fetchProgram(IsNext) {
+        console.log(IsNext)
+    //    let month_selection = IsNext ? config.current_Month : config.next_Month; 
+    let month_selection=null;
+    if (IsNext===false || IsNext===undefined){
+        month_selection=config.current_Month;
+        this.show_month((config.display_month(month_selection)));
+        
+    }
+    else{
+        month_selection=config.next_Month;
+        this.show_month((config.display_month(month_selection)));
+        
+    }
+
+       console.log(month_selection);
+       let endPoint= `${this.endPoint}/${config.employee_id}/${config.current_Year}/${month_selection}`      
+       let response = await this._callFetchService(endPoint);
        let ar=JSON.parse(response[0].Program);
        this.workCollection(new Work_Collection(ar));
        this._adjustData();
@@ -31,13 +45,12 @@ class VM{
             method: "GET",
             credentials: "include",
             headers: {
-                Authorization: "Basic " + btoa("user-esimis"+":"+"#esimis!123")
+                Authorization: "Basic " + btoa(config.user_id+":"+config.user_pwd)
             }
         }
         let response = await fetch(request, options);
         if (response.ok) {
             let serviceData = await response.json();
-            console.log(serviceData);
             return serviceData;
         }
         else

@@ -1,4 +1,5 @@
 import ko from "knockout"
+import {config} from "app/Helper"
 import template from "./view.html"
 
 
@@ -41,8 +42,13 @@ class VM{
 async _onLogin(){
 
     this.emp_ID= await this._login(this.username(),this.password());
-    console.log(this.emp_ID);
     if (this.emp_ID!=null){
+        config.user_id=this.username();
+        config.user_pwd=this.password();
+        config.employee_id=this.emp_ID;
+        console.log(JSON.stringify(config));
+        
+
        this.navigateDashboard();
     }
     

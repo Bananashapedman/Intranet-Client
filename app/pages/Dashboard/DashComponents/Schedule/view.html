@@ -44,10 +44,11 @@
                 style="color:gainsboro"></i></a>
 
         <div class="pagination" id="pagination">
-            <i class="page-scale fas fa-angle-left fa-fw"></i>
-            <!--custom css carousel-->
-            <span data-bind="text:$component.workCollection().cur_month"></span>
-            <i class="fas fa-angle-right fa-fw  page-scale"></i>
+            <i class="page-scale fas fa-angle-left fa-fw" data-bind="click:function(){$component._fetchProgram(false)}"></i>
+
+            <span data-bind="text:$component.show_month()"></span>
+            
+            <i class="fas fa-angle-right fa-fw  page-scale" data-bind="click:function(){$component._fetchProgram(true)}"></i>
         </div>
         <a id="browserPrint" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Download PDF"><i
                 class="fas fa-file-pdf fa-lg fa-fw" style="color: #d9534f;"></i></a>

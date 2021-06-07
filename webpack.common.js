@@ -60,12 +60,12 @@ module.exports = {
         splitChunks: {
             cacheGroups: {
                 eaLib: {
-                    test: /[\\/]_libs\\ea\\ea.js/,  //rwta simo
+                    test: /[\\/]_libs\\ea\\ea.js/, 
                     name: 'ea',
                     chunks: 'all'
                 },
                 commons: {
-                    test: /[\\/]_libs\\(jquery|jquery-ui|knockout)[\\/]/,  //vendor biblio8hkes
+                    test: /[\\/]_libs\\(jquery|jquery-ui|knockout)[\\/]/,  
                     name: 'vendors',
                     chunks: 'all'
                 }
