@@ -1,10 +1,12 @@
 import ko from "knockout"
 import template from "./view.html"
+import {config} from "app/Helper"
 
 class VM{
     constructor(params){
         this.params=params;
         this.dash_content=ko.observable('dash-schedule');
+        this.config=config;
     }
 
     _selectPage(ele, name){
@@ -51,8 +53,9 @@ class VM{
     }
 
 
-
-   
+    _logOut(){
+        config.root_page.show_Login();
+    }
 
 
 }

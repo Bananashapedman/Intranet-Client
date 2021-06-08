@@ -19,16 +19,18 @@
     <div class="profile">
         <!--flex-2-->
 
-        <div class="face-container"><img class="img-fluid" src="/dist/ICONS/Dashboard/elfo.jpg" alt="Emp Face"></div>
+        <div class="face-container"><img class="img-fluid" data-bind="attr:{src:$component.config.employee_face}" alt="Emp Face"></div>
 
         <div class="hs-drop-container">
-            <a href="#" class="emp-name">_DisplayName_</a>
+            <a style="margin:auto;" href="#" class="emp-name text-center" data-bind="text:$component.config.employee_name"></a>
             <ul class="hs-drop-list">
                 <li><a class="d-flex align-center b-fix" href="#"><i class="fas fa-user "></i><span>Profile</span></a>
                 </li>
                 <li><a class="d-flex align-center" href="#"><i class="fas fa-cog "></i><span>Settings</span></a></li>
                 <hr class="dashed">
-                <li><a id="s-out" class="d-flex align-center red" href="#"><i class="fas fa-power-off"></i><span>Sign
+                <li><a
+                       data-bind="click:$component._logOut.bind($component)"
+                      id="s-out" class="d-flex align-center red" href="#"><i class="fas fa-power-off"></i><span>Sign
                             Out</span></a></li>
             </ul>
         </div>
@@ -50,7 +52,7 @@
 
         <li><a class="nav-link text-white active" data-bind="click:function(d,e){ $component._selectPage($element, 'dash-schedule')}"><i class="fas fa-calendar-alt fa-fw"></i><span>Schedule</span></a>
         </li>
-        <li><a class="nav-link text-white" data-bind="click:function(d,e){$component._selectPage($element)}"><i class="fas fa-tshirt fa-fw"></i><span>Clothing</span></a></li>
+        <li><a class="nav-link text-white" data-bind="click:function(d,e){$component._selectPage($element,'dash-clothing')}"><i class="fas fa-tshirt fa-fw"></i><span>Clothing</span></a></li>
         <li><a class="nav-link text-white" data-bind="click:function(d,e){$component._selectPage($element)} , c"><i class="fas fa-certificate fa-fw"></i><span>Certificates</span></a>
         </li>
         <li><a class="nav-link text-white " data-bind="click:function(d,e){$component._selectPage($element)}"><i class="fas fa-comments fa-fw"></i><span>Contact</span></a></li>

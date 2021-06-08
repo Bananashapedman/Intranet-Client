@@ -14,6 +14,7 @@ class VM{
         
         this._fetchProgram(); 
         
+        
     }
 
     async _fetchProgram(IsNext) {
@@ -37,6 +38,7 @@ class VM{
        let ar=JSON.parse(response[0].Program);
        this.workCollection(new Work_Collection(ar));
        this._adjustData();
+       config.pick_Face();  // weird position but okay!
    }   
 
    async _callFetchService(request) {
@@ -74,8 +76,14 @@ class VM{
         document.querySelector("thead").style.transform = translate;
 
     }
+
+
+    _logOut(){
+        alert('logouts');
+    }
    
 }
+
 
 
 ko.components.register("dash-schedule",{
