@@ -1,0 +1,49 @@
+.curtain{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    background:rgba(0, 0, 0, 0.7);
+    display:flex;
+    justify-content: center;
+    
+}
+
+.hide-curtain{
+    display:none;
+}
+
+.request-change{
+    background-color: #fff;
+    height:600px;
+    width:400px;
+    z-index:2000;
+    margin-top:90px;
+    border-radius:15px;
+    position:relative;
+}
+
+.request-change.container-fluid{
+   
+    width:100%;
+    height:100%;
+}
+.hidden-shifts{
+    display:none;
+}
+
+@media only screen and (min-width: 992px){  /*large break for BS5*/
+
+    .curtain{
+        left:173px;
+    }       
+    
+    .request-change.container-fluid{
+        
+        height:900px;
+        max-width:1000px;
+    }
+
+}
+

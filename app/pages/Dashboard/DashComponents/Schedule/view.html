@@ -31,7 +31,7 @@
                     <td data-bind="text: day_string"></td>
                     <td data-bind="text: shift"></td>
                     <td data-bind="text: shift_start"></td>
-                    <td><i class="fas fa-pencil-alt"></i></td>
+                    <td data-bind="click:function(d,e){$component.grab_day(d); $component.curtain_lift()}"><i class="fas fa-pencil-alt"></i></td>
                 </tr>
                 <!-- /ko -->
                 <!-- /ko -->
@@ -54,4 +54,27 @@
         <a id="browserPrint" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Download PDF"><i
                 class="fas fa-file-pdf fa-lg fa-fw" style="color: #d9534f;"></i></a>
    </div>
+
+
+<div class="curtain hide-curtain" id="curtain" data-bind="click:function(d,e){$component.curtain_drop(e)}">
+
+    <div class="request-change container-fluid shadow-sm" data-bind="click:function(d,e){$component.kill_Prop(e)}">
+        <i style="position:absolute; top:10px; right:15px;" class="far fa-times-circle fa-2x" data-bind="click:$component.curtain_drop()"></i>
+
+        <div>What would you like to change for the selected date?</div>
+        <div>
+            <div>Maybe a day off? <button>Yes, Please!</button></div>
+            <div>Or would you like to change your shift?<button data-bind="click:function(d,e){$component.reveal_shift()}">Yeap.</button></div>
+        </div>
+
+
+        <div id="hidden-shifts" class="hidden-shifts">brrrrrrr br br br</div>
+
+
+    </div>
+
+</div>
+
+
+
 </div>

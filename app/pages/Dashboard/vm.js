@@ -43,8 +43,6 @@ class VM{
     _coverCollapse(ele){
         ele.classList.add('d-none');
         document.getElementById('hs-sidebar').classList.remove('open');
-    
-
     }
 
     _collapseLarge(){
@@ -56,6 +54,8 @@ class VM{
     _logOut(){
         config.root_page.show_Login();
     }
+
+
 
 
 }
