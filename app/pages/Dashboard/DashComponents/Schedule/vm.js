@@ -7,17 +7,20 @@ import { config } from "app/Helper"
 class VM {
 
     constructor(params) {
+        
 
+        this.isWorking=ko.observable();
+        this.isNotWorking=ko.observable();
         this.workCollection = ko.observable();
         this.show_month = ko.observable();
+        this.selected_day=ko.observable();
+        this.selected_workday=ko.observable();
         this.endPoint = "https://zeus.eaddon.local:9999/Thesis/GetProgram";
 
         this._fetchProgram();
 
         //changing days
         //===============================================================
-
-
 
     }
 
@@ -91,28 +94,45 @@ class VM {
 
     grab_day(day_obj) {
           let date_current=new Date();
-          console.log(Date.parse(date_current));
-          console.log(Date.parse(day_obj.date));
-        // if (this.exclude_previous_days(day_obj.date) == true) {
-        //     alert('ok');
-        // }
 
-        // else {
-        //     alert("Hey!! You can't do that!!");
-        // }
+        if (Date.parse(date_current)<Date.parse(day_obj.date)) {
+            
+            let temp = day_obj.date.split("-");
+            this.selected_day(temp[2]);
+            this.selected_workday(day_obj);
+            this.working(day_obj.t);
+
+            
+
+            this.curtain_lift();
+        }
+
+        else {
+            alert("Whoops, unfortunately you cannot change the past :'[");
+        }
     }
 
-
-    exclude_previous_days(date_selected) {
-      
-        // let date_current = new Date();
-        // if (date_selected.valueOf() <= date_current.valueOf()) {
-        //     return false;
-        // }
-        // else {
-        //     return true;
-        // }
+    current_shift(){
+        let list=["Morning","Afternoon","Night"];
+        return list[this.selected_workday().z-1];
+        
     }
+
+    working(value){
+        if (value==0){
+            this.isWorking(false);
+            this.isNotWorking(true);
+        }
+
+        else{
+            this.isWorking(true);
+            this.isNotWorking(false);
+        }
+    }
+
+    
+
+
 
 
     curtain_drop(){
@@ -127,10 +147,7 @@ class VM {
 
     }
 
-    reveal_shift(){
-        document.getElementById('hidden-shifts').classList.toggle('hidden-shifts');
-        
-    }
+
 
 }
 
