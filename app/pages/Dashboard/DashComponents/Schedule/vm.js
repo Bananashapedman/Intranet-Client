@@ -23,6 +23,7 @@ class VM {
         this.selected_workday=ko.observable();
         this.selected_shift=ko.observable();
         this.endPoint = "https://zeus.eaddon.local:9999/Thesis/GetProgram";
+        this.endPoint_Change= "https://zeus.eaddon.local:9999/Thesis/ChangeDayProgram";
 
         this._fetchProgram();
 
