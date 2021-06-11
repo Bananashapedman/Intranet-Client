@@ -8,19 +8,20 @@ class VM {
 
     constructor(params) {
         
-        this.available_shifts=ko.observableArray(['Morning','Afternoon','Night']);
+       
 
         this.isWorking=ko.observable();
         this.isNotWorking=ko.observable();
         this.day_obj=ko.observable();
-        this.shift_value=ko.observable();
+        
      
         
-
+        this.shift_list=["Morning","Afternoon","Night"];
         this.workCollection = ko.observable();
         this.show_month = ko.observable();
         this.selected_day=ko.observable();
         this.selected_workday=ko.observable();
+        this.selected_shift=ko.observable();
         this.endPoint = "https://zeus.eaddon.local:9999/Thesis/GetProgram";
 
         this._fetchProgram();
@@ -108,6 +109,7 @@ class VM {
             this.selected_day(temp[2]);
             this.selected_workday(day_obj);
             this.working(day_obj.t);
+            this.selected_shift(day_obj.z);
             this.curtain_lift();
         }
 
@@ -159,14 +161,18 @@ class VM {
 
     
 request_day_off(){
+    
     this.day_obj().t=0;
     console.log(this.day_obj());
     //fetch kai ta resta
 }
 
 request_schedule_change(){
-
-    console.log(this.shift_value());
+        const select= document.getElementById('shifts');
+        this.day_obj().z=select.value;
+        this.day_obj().t=1;
+        console.log(this.day_obj());
+    
 
 }
  

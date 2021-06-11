@@ -7,12 +7,13 @@
         </div>
 
         <div class="input-group rounded ">
-            
+
             <!-- <input id="hs-search" type="search" class="form-control-md  hs-rounded" placeholder=" Search.." /> -->
             </span>
         </div>
     </div>
-    <div id="table-flow" class="table-flow container-fluid" data-bind="event:{scroll:function(d,e){$component._fixedHeader($element)}}">
+    <div id="table-flow" class="table-flow container-fluid"
+        data-bind="event:{scroll:function(d,e){$component._fixedHeader($element)}}">
         <table id="hs-table" class="table table-responsive table-dark table-hover table-striped">
             <thead>
                 <tr>
@@ -24,15 +25,15 @@
                 </tr>
             </thead>
             <tbody>
-                 <!-- ko if:$component.workCollection -->
+                <!-- ko if:$component.workCollection -->
                 <!-- ko foreach:$component.workCollection().work_list -->
                 <tr>
                     <td data-bind="text: day_num"></td>
                     <td data-bind="text: day_string"></td>
                     <td data-bind="text: shift"></td>
                     <td data-bind="text: shift_start"></td>
-                    <td data-bs-toggle="tooltip"
-                    data-bs-placement="bottom" title="Request a Change" data-bind="click:function(d,e){$component.grab_day(d)}"><i class="fas fa-pencil-alt"></i></td>
+                    <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Request a Change"
+                        data-bind="click:function(d,e){$component.grab_day(d)}"><i class="fas fa-pencil-alt"></i></td>
                 </tr>
                 <!-- /ko -->
                 <!-- /ko -->
@@ -46,51 +47,89 @@
                 style="color:gainsboro"></i></a>
 
         <div class="pagination" id="pagination">
-            <i class="page-scale fas fa-angle-left fa-fw" data-bind="click:function(){$component._fetchProgram(false)}"></i>
+            <i class="page-scale fas fa-angle-left fa-fw"
+                data-bind="click:function(){$component._fetchProgram(false)}"></i>
 
             <span data-bind="text:$component.show_month()"></span>
-            
-            <i class="fas fa-angle-right fa-fw  page-scale" data-bind="click:function(){$component._fetchProgram(true)}"></i>
+
+            <i class="fas fa-angle-right fa-fw  page-scale"
+                data-bind="click:function(){$component._fetchProgram(true)}"></i>
         </div>
         <a id="browserPrint" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Download PDF"><i
                 class="fas fa-file-pdf fa-lg fa-fw" style="color: #d9534f;"></i></a>
-   </div>
-
-
-<div class="curtain hide-curtain" id="curtain" data-bind="click:function(d,e){$component.curtain_drop(e)}">
-
-    <div class="request-change container-fluid shadow-sm" data-bind="click:function(d,e){$component.kill_Prop(e)}">
-        <i style="position:absolute; top:10px; right:15px; color:#d9534f" class="far fa-times-circle fa-2x" data-bind="click:$component.curtain_drop()"></i>
-        <div class="shift-title">Request a schedule change for &nbsp; <span data-bind="text:$component.show_month()"></span> ,&nbsp; <span data-bind="text:$component.selected_day()"></span></div>
-        <div class="shift-options" data-bind="visible: isWorking">
-
-            
-            <div class="shift-options-text">Request a day off! <div class="mt-2"><button class="btn btn-success" data-bind="click:function(d,e){$component.request_day_off()}">Yes, Please!</button><button data-bind="click:function(d,e){$component.disableBTN(e)}" class=" btn btn-danger" data-bs-toggle="collapse" data-bs-target="#collapseShiftChange">No, thanks!</button></div></div>
-            <div class="collapse" id="collapseShiftChange">
-                <div class="shift-options-text mt-5">Would you like to change your shift?
-                    <div class="mt-2">
-                       
-                            
-                            <!--ko if:$component.selected_workday-->
-                            <select data-bind="options: available_shifts
-                                               value:shift-value  "></select>
-                            <!-- <option selected data-bind="text:$component.current_shift()"></option> -->
-
-                            <!-- /ko -->
-                            <button data-bind="click:request_schedule_change">get value</button>
-                         
-                    </div></div>
-            </div>
-
-        </div>
-        
-
-        <div class="shift-options" data-bind="visible: isNotWorking">hellllooooo</div>
-
-        
     </div>
 
-</div>
+
+    <div class="curtain hide-curtain" id="curtain" data-bind="click:function(d,e){$component.curtain_drop(e)}">
+
+        <div class="request-change container-fluid shadow-sm" data-bind="click:function(d,e){$component.kill_Prop(e)}">
+            <i style="position:absolute; top:10px; right:15px; color:#d9534f" class="far fa-times-circle fa-2x"
+                data-bind="click:$component.curtain_drop()"></i>
+
+
+
+            <div  class="shift-title">Request Schedule Change </div>
+            <div class="d-flex justify-content-center shift-date"><span data-bind="text:$component.show_month()"></span> &nbsp; <span data-bind="text:$component.selected_day()"></span></div>
+
+
+
+
+            <div class="" data-bind="visible: isWorking">
+
+
+                <div class="">Request a day off? </div>
+                    <div class="">
+                    <button class="btn btn-success my-1" data-bind="click:function(d,e){$component.request_day_off()}">Yes, Please!</button>
+                    <button class=" btn btn-danger my-1" data-bs-toggle="collapse" data-bs-target="#collapseShiftChange">No,thanks!</button>
+                    </div>
+               
+                <div class="" id="collapseShiftChange">
+                    
+                        <div class="">
+
+                            <!--ko if:$component.selected_workday-->
+
+                            <label style="font-size:1.1rem" for="cars">Choose a new shift:</label><br>
+
+                            <select name="shifts" id="shifts" class="form-select mt-4">
+                                <option value="1">Morning</option>
+                                <option value="2">Afternoon</option>
+                                <option value="3">Night</option>
+                            </select><br>
+
+                            <!-- /ko -->
+                            <button class="btn btn-primary" data-bind="click:request_schedule_change">Submit</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="shift-options" data-bind="visible: isNotWorking">
+                <div class="mt-2">
+
+
+                    <!--ko if:$component.selected_workday-->
+                    <div>Would you like to Work instead?</div><br>
+                    <label for="cars">Choose a shift:</label><br>
+
+                    <select name="shifts" id="shifts" class="form-select">
+                        <option value="0">Morning</option>
+                        <option value="1">Afternoon</option>
+                        <option value="2">Night</option>
+                    </select><br>
+
+                    <!-- /ko -->
+                    <button data-bind="click:request_schedule_change">get value</button>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
 
 
 
