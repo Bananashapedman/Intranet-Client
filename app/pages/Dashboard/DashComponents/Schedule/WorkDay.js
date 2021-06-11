@@ -4,7 +4,7 @@ export class WorkDay {                     //building a day
         this.date = obj.Date
         this.z = obj.z
         this.t = obj.t
-        this.m_Ar = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        this.m_Ar = [ "January","February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         this.d_Ar = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
         this.s_Ar = ["m", "a", "n"];
         this.ss_Ar = ["09:00", "17:00", "01:00"];

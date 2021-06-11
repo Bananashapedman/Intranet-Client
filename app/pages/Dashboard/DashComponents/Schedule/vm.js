@@ -8,9 +8,15 @@ class VM {
 
     constructor(params) {
         
+        this.available_shifts=ko.observableArray(['Morning','Afternoon','Night']);
 
         this.isWorking=ko.observable();
         this.isNotWorking=ko.observable();
+        this.day_obj=ko.observable();
+        this.shift_value=ko.observable();
+     
+        
+
         this.workCollection = ko.observable();
         this.show_month = ko.observable();
         this.selected_day=ko.observable();
@@ -30,12 +36,12 @@ class VM {
         let month_selection = null;
         if (IsNext === false || IsNext === undefined) {
             month_selection = config.current_Month;
-            this.show_month((config.display_month(month_selection)));
+            this.show_month((config.display_month(month_selection-1)));
 
         }
         else {
             month_selection = config.next_Month;
-            this.show_month((config.display_month(month_selection)));
+            this.show_month((config.display_month(month_selection-1)));
 
         }
 
@@ -93,6 +99,7 @@ class VM {
     //handling schedule changes
 
     grab_day(day_obj) {
+        this.day_obj(day_obj);
           let date_current=new Date();
 
         if (Date.parse(date_current)<Date.parse(day_obj.date)) {
@@ -101,9 +108,6 @@ class VM {
             this.selected_day(temp[2]);
             this.selected_workday(day_obj);
             this.working(day_obj.t);
-
-            
-
             this.curtain_lift();
         }
 
@@ -147,6 +151,25 @@ class VM {
 
     }
 
+
+    disableBTN(boolean){
+       
+         btn.target.classList.add('disabled');
+    }
+
+    
+request_day_off(){
+    this.day_obj().t=0;
+    console.log(this.day_obj());
+    //fetch kai ta resta
+}
+
+request_schedule_change(){
+
+    console.log(this.shift_value());
+
+}
+ 
 
 
 }

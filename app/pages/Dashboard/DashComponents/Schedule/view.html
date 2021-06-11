@@ -65,20 +65,20 @@
         <div class="shift-options" data-bind="visible: isWorking">
 
             
-            <div class="shift-options-text">Request a day off! <div class="mt-2"><button class="btn btn-success">Yes, Please!</button><button class=" btn btn-danger" data-bs-toggle="collapse" data-bs-target="#collapseShiftChange">No, thanks!</button></div></div>
+            <div class="shift-options-text">Request a day off! <div class="mt-2"><button class="btn btn-success" data-bind="click:function(d,e){$component.request_day_off()}">Yes, Please!</button><button data-bind="click:function(d,e){$component.disableBTN(e)}" class=" btn btn-danger" data-bs-toggle="collapse" data-bs-target="#collapseShiftChange">No, thanks!</button></div></div>
             <div class="collapse" id="collapseShiftChange">
                 <div class="shift-options-text mt-5">Would you like to change your shift?
                     <div class="mt-2">
-                        <select class="form-select" aria-label="Default select example">
+                       
                             
                             <!--ko if:$component.selected_workday-->
-                            <option selected data-bind="text:$component.current_shift()"></option>
-                            <option value="0">Morning</option>
-                            <option value="1">Afternoon</option>
-                            <option value="2">Night</option>
+                            <select data-bind="options: available_shifts
+                                               value:shift-value  "></select>
+                            <!-- <option selected data-bind="text:$component.current_shift()"></option> -->
 
                             <!-- /ko -->
-                          </select>
+                            <button data-bind="click:request_schedule_change">get value</button>
+                         
                     </div></div>
             </div>
 
