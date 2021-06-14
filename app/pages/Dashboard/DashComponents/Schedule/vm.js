@@ -22,13 +22,22 @@ class VM {
         this.selected_day=ko.observable();
         this.selected_workday=ko.observable();
         this.selected_shift=ko.observable();
-        this.endPoint = "https://thesis-api.azurewebsites.net/Thesis/GetProgram"; //https://thesis-api.azurewebsites.net/Thesis/Version
+        this.endPoint = "https://thesis-api.azurewebsites.net/Thesis/GetProgram"; 
         this.endPoint_Change= "https://thesis-api.azurewebsites.net/Thesis/ChangeDayProgram";
 
         this._fetchProgram();
 
         //changing days
         //===============================================================
+
+    }
+
+    async _fetchChangeOFF(){
+        debugger;
+        let endPoint_Change=`${this.endPoint_Change}/${config.employee_id}/${this.day_obj().date}/${this.day_obj().z}/${this.day_obj().t}`;
+        let response= await this._callFetchService(endPoint_Change);
+        console.log(response);
+        
 
     }
 
@@ -172,10 +181,11 @@ request_schedule_change(){
         const select= document.getElementById('shifts');
         this.day_obj().z=select.value;
         this.day_obj().t=1;
-        console.log(this.day_obj());
+        console.log(this.day_obj().date);
+        this._fetchChangeOFF();
     
 
-}
+}// trekse thn fetch
  
 
 
