@@ -8,7 +8,7 @@ class VM {
 
     constructor(params) {
         
-       
+       this.curDate=new Date();
 
         this.isWorking=ko.observable();
         this.isNotWorking=ko.observable();
@@ -33,10 +33,28 @@ class VM {
     }
 
     async _fetchChangeShift(){
-        
+
+        let month=this.day_obj().date;
+        let month= month.split("-");
+
         let endPoint_Change=`${this.endPoint_Change}/${config.employee_id}/${this.day_obj().date}/${this.day_obj().z}/${1}`;
         await this._callFetchService(endPoint_Change,false);
-        this._fetchProgram();
+
+        if (this.curDate.getMonth()==month){
+            
+            this._fetchProgram(false);
+
+        }
+
+        else{
+            this._fetchProgram(true);
+        }
+        
+       
+
+       
+        
+        
         
         
              
