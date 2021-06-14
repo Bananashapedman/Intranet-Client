@@ -79,7 +79,7 @@
 
                 <div class="">Request a day off? </div>
                     <div class="">
-                    <button class="btn btn-success my-1" data-bind="click:function(d,e){$component.request_day_off()}">Yes, Please!</button>
+                    <button class="btn btn-success my-1" data-bind="click:function(d,e){$component.request_schedule_change(true)}">Yes, Please!</button>
                     <button class=" btn btn-danger my-1" data-bs-toggle="collapse" data-bs-target="#collapseShiftChange">No,thanks!</button>
                     </div>
                
@@ -98,7 +98,7 @@
                             </select><br>
 
                             <!-- /ko -->
-                            <button class="btn btn-primary" data-bind="click:request_schedule_change">Submit</button>
+                            <button class="btn btn-primary" data-bind="click:function(d,e){$component.request_schedule_change(false)}">Submit</button>
                         </div>
 
                     </div>
@@ -106,22 +106,22 @@
             </div>
 
 
-            <div class="shift-options" data-bind="visible: isNotWorking">
+            <div class="" data-bind="visible: isNotWorking">
                 <div class="mt-2">
 
 
                     <!--ko if:$component.selected_workday-->
                     <div>Would you like to Work instead?</div><br>
-                    <label for="cars">Choose a shift:</label><br>
+                    <label for="shifts">Choose a shift:</label><br>
 
-                    <select name="shifts" id="shifts" class="form-select">
+                    <select name="shifts" id="shifts" class="form-select mt-4">
                         <option value="0">Morning</option>
                         <option value="1">Afternoon</option>
                         <option value="2">Night</option>
                     </select><br>
 
                     <!-- /ko -->
-                    <button data-bind="click:request_schedule_change">get value</button>
+                    <button data-bind="click:function(d,e){$component.request_schedule_change(false)}">get value</button>
 
                 </div>
             </div>

@@ -32,34 +32,59 @@ class VM {
 
     }
 
-    async _fetchChangeShift(){
 
+    //changing shift on ANY day
+    async _fetchChangeShift(condition){
+        debugger;
         let month=this.day_obj().date;
-        let month= month.split("-");
+        month= month.split("-");
+        let endPoint_Change=null;
 
-        let endPoint_Change=`${this.endPoint_Change}/${config.employee_id}/${this.day_obj().date}/${this.day_obj().z}/${1}`;
+        if (condition==true){
+           endPoint_Change=`${this.endPoint_Change}/${config.employee_id}/${this.day_obj().date}/${this.day_obj().z}/${0}`;
+        }
+        else{
+
+           endPoint_Change=`${this.endPoint_Change}/${config.employee_id}/${this.day_obj().date}/${this.day_obj().z}/${1}`;
+
+        }
+
+        
         await this._callFetchService(endPoint_Change,false);
 
         if (this.curDate.getMonth()==month){
-            
-            this._fetchProgram(false);
 
-        }
+              this._fetchProgram(false);
+       }
 
         else{
             this._fetchProgram(true);
         }
-        
-       
+    }
 
-       
+    
+        //requesting a day off
+  async _fetchDayOff(){
+
+    let endPoint_Change=`${this.endPoint_Change}/${config.employee_id}/${this.day_obj().date}/${this.day_obj().z}/${0}`;
+
+    await this._callFetchService(endPoint_Change,false);
+
+    if (this.curDate.getMonth()==month){
         
-        
-        
-        
-             
+        this._fetchProgram(false);
 
     }
+
+    else{
+        this._fetchProgram(true);
+    }
+
+  }
+
+
+
+
 
     async _fetchProgram(IsNext) {
         console.log(IsNext)
@@ -193,23 +218,17 @@ class VM {
          btn.target.classList.add('disabled');
     }
 
-    
-request_day_off(){
-    
-    this.day_obj().t=0;
-    console.log(this.day_obj());
-    //fetch kai ta resta
-}
 
-request_schedule_change(){
+
+request_schedule_change(condition){
         const select= document.getElementById('shifts');
         this.day_obj().z=select.value;
         this.day_obj().t=1;
         
-        this._fetchChangeShift();
+        this._fetchChangeShift(condition);
     
 
-}// trekse thn fetch
+}
  
 
 
