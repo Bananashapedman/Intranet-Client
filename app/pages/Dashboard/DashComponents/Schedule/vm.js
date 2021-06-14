@@ -36,6 +36,8 @@ class VM {
         
         let endPoint_Change=`${this.endPoint_Change}/${config.employee_id}/${this.day_obj().date}/${this.day_obj().z}/${1}`;
         await this._callFetchService(endPoint_Change,false);
+        this._fetchProgram();
+        
         
              
 

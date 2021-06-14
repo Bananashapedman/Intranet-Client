@@ -31,7 +31,7 @@ class VM{
         ele.classList.add('active');
     }
 
-    //============================================
+    //===============================================
 
     _ham(){
         const cover=document.getElementById('cover');
