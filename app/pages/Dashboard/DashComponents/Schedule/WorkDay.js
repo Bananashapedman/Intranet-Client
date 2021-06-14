@@ -37,7 +37,7 @@ export class WorkDay {                     //building a day
 
         let temp = this.s_Ar[this.z - 1];
 
-        if (this.t === 1) {
+        if (this.t == 1) {
             temp = temp.toUpperCase();
             return temp;
         }

@@ -32,12 +32,12 @@ class VM {
 
     }
 
-    async _fetchChangeOFF(){
-        debugger;
-        let endPoint_Change=`${this.endPoint_Change}/${config.employee_id}/${this.day_obj().date}/${this.day_obj().z}/${this.day_obj().t}`;
-        let response= await this._callFetchService(endPoint_Change);
-        console.log(response);
+    async _fetchChangeShift(){
         
+        let endPoint_Change=`${this.endPoint_Change}/${config.employee_id}/${this.day_obj().date}/${this.day_obj().z}/${1}`;
+        await this._callFetchService(endPoint_Change,false);
+        
+             
 
     }
 
@@ -58,14 +58,14 @@ class VM {
 
         console.log(month_selection);
         let endPoint = `${this.endPoint}/${config.employee_id}/${config.current_Year}/${month_selection}`
-        let response = await this._callFetchService(endPoint);
+        let response = await this._callFetchService(endPoint,true);
         let ar = JSON.parse(response[0].Program);
         this.workCollection(new Work_Collection(ar));
         this._adjustData();
         config.pick_Face();  // weird position but okay!
     }
 
-    async _callFetchService(request) {
+    async _callFetchService(request, isJSON) {
         try {
             let options = {
                 method: "GET",
@@ -74,16 +74,20 @@ class VM {
                     Authorization: "Basic " + btoa(config.user_id + ":" + config.user_pwd)
                 }
             }
+           
             let response = await fetch(request, options);
             if (response.ok) {
-                let serviceData = await response.json();
-                return serviceData;
+                if (isJSON){
+                    let serviceData = await response.json();
+                    return serviceData;
+                }
+            
             }
             else
                 throw Error(response.statusText);
         }
         catch (e) {
-            alert(e.message);
+            console.log(e.message);
         }
     }
 
@@ -181,8 +185,8 @@ request_schedule_change(){
         const select= document.getElementById('shifts');
         this.day_obj().z=select.value;
         this.day_obj().t=1;
-        console.log(this.day_obj().date);
-        this._fetchChangeOFF();
+        
+        this._fetchChangeShift();
     
 
 }// trekse thn fetch
