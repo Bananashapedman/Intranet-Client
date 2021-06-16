@@ -15,6 +15,15 @@ class VM{
 
 
     }
+
+    menuDrop(){
+        document.getElementById('hs-drop').classList.toggle('active');
+  }
+
+
+  whaleGrab(){
+    document.getElementById('img_grab').classList.add('_moveOnLoad');
+}
 }
 
 
