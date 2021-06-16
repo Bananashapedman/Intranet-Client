@@ -24,15 +24,15 @@ class HELP{
        
         if (this.employee_id==1){
             this.employee_name("John Bepis");
-            this.employee_face("/dist/ICONS/Dashboard/lucy.png");
+            this.employee_face("https://lh3.googleusercontent.com/FOw7an19ZuMmwfmj27U87YB8RNBzQeNcSnLcIfJyfxVrjt08Sdlheb41kuUkMrboaSsaH4OWGh1WBUIm34o3NONAM521-9x0CvuOpVZjC79ThniHHM4lyCd0iltJS0lKZxsAHJwa=w2400"); ///dist/ICONS/Dashboard/gunther.png
         }
         else if(this.employee_id==3){
             this.employee_name("Hector Simis");
-            this.employee_face("/dist/ICONS/Dashboard/gunther.png")
+            this.employee_face("https://lh3.googleusercontent.com/FOw7an19ZuMmwfmj27U87YB8RNBzQeNcSnLcIfJyfxVrjt08Sdlheb41kuUkMrboaSsaH4OWGh1WBUIm34o3NONAM521-9x0CvuOpVZjC79ThniHHM4lyCd0iltJS0lKZxsAHJwa=w2400")  ;
         }
         else{
             this.employee_name("Boban Marjano");
-            this.employee_face("/dist/ICONS/Dashboard/elfo.jpg");
+            this.employee_face("https://lh3.googleusercontent.com/AtuL8V4fwTDlBMjFxNGXrVBUfneeYvphsGLyqRv9vUm8x5IHVoOdNMzC98bZnGPdRw0SsDjAF3Fj7xj3pppbP21VARRaeeZOAGtNU-C9ds41kzYb9juGfHYPpqp55YIUOW4iY_uZ=w2400"); ///dist/ICONS/Dashboard/lucy.png
         }
     }// to trexw sthn Fetch (anagastika)
 

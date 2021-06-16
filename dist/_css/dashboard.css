@@ -9,12 +9,7 @@
     background-color: #fff !important;
 }
 
-/* @media only screen and (min-width: 992px) {
-    .d-none{
-          display:block !important;
-      }
-    
-    } */
+
 .high-color{
     color:#5cb85c
     !important;
@@ -58,6 +53,7 @@
     width:60px;
     border-radius:50%;
     overflow:hidden;
+    
    
 }
 .face-container .img{

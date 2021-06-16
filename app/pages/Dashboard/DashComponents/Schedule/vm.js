@@ -195,7 +195,6 @@ class VM {
         }
     }
 
-    
 
 
 
@@ -213,19 +212,13 @@ class VM {
     }
 
 
-    disableBTN(boolean){
-       
-         btn.target.classList.add('disabled');
-    }
-
-
-
 request_schedule_change(condition){
         const select= document.getElementById('shifts');
         this.day_obj().z=select.value;
         this.day_obj().t=1;
         
         this._fetchChangeShift(condition);
+        this.curtain_drop();
     
 
 }

@@ -60,76 +60,101 @@
     </div>
 
 
-    <div class="curtain hide-curtain" id="curtain" data-bind="click:function(d,e){$component.curtain_drop(e)}">
+    <div class="curtain " id="curtain" data-bind="click:function(d,e){$component.curtain_drop(e)}">
 
         <div class="request-change container-fluid shadow-sm" data-bind="click:function(d,e){$component.kill_Prop(e)}">
-            <i style="position:absolute; top:10px; right:15px; color:#d9534f" class="far fa-times-circle fa-2x"
+            <i style="position:absolute; top:10px; right:10px; color:#d9534f" class="far fa-times-circle fa-2x"
                 data-bind="click:$component.curtain_drop()"></i>
 
 
 
-            <div  class="shift-title">Request Schedule Change </div>
-            <div class="d-flex justify-content-center shift-date"><span data-bind="text:$component.show_month()"></span> &nbsp; <span data-bind="text:$component.selected_day()"></span></div>
+            <div class="shift-title">Request Schedule Change </div>
+            <div class="d-flex justify-content-center shift-date"><span
+                    data-bind="text:$component.show_month()"></span> &nbsp; <span
+                    data-bind="text:$component.selected_day()"></span></div>
 
 
 
+            <div class="d-flex flex-column justify-content-center">
+                <div data-bind="visible: isWorking" class="">
 
-            <div class="" data-bind="visible: isWorking">
-
-
-                <div class="">Request a day off? </div>
-                    <div class="">
-                    <button class="btn btn-success my-1" data-bind="click:function(d,e){$component.request_schedule_change(true)}">Yes, Please!</button>
-                    <button class=" btn btn-danger my-1" data-bs-toggle="collapse" data-bs-target="#collapseShiftChange">No,thanks!</button>
+                    <div class="flex-group">
+                        <div class="caption-header mb-3">Request a day off </div>
+                        <button class="btn btn-success my-1"
+                            data-bind="click:function(d,e){$component.request_schedule_change(true)}">Accept</button>
                     </div>
-               
-                <div class="" id="collapseShiftChange">
-                    
+
+
+
+
+                    <div class="" id="collapseShiftChange">
+
                         <div class="">
 
                             <!--ko if:$component.selected_workday-->
 
-                            <label style="font-size:1.1rem" for="cars">Choose a new shift:</label><br>
+                            <label class="caption-header" for="shifts">Choose a new shift:</label>
 
-                            <select name="shifts" id="shifts" class="form-select mt-4">
+                            <select name="shifts" id="shifts" class="form-select mt-4" style="max-width:300px;">
                                 <option value="1">Morning</option>
                                 <option value="2">Afternoon</option>
                                 <option value="3">Night</option>
                             </select><br>
 
                             <!-- /ko -->
-                            <button class="btn btn-primary" data-bind="click:function(d,e){$component.request_schedule_change(false)}">Submit</button>
+                            <button class="btn btn-primary "
+                                data-bind="click:function(d,e){$component.request_schedule_change(false)}">Submit</button>
                         </div>
 
                     </div>
                 </div>
-            </div>
 
 
-            <div class="" data-bind="visible: isNotWorking">
-                <div class="mt-2">
 
 
-                    <!--ko if:$component.selected_workday-->
-                    <div>Would you like to Work instead?</div><br>
-                    <label for="shifts">Choose a shift:</label><br>
 
-                    <select name="shifts" id="shifts" class="form-select mt-4">
-                        <option value="0">Morning</option>
-                        <option value="1">Afternoon</option>
-                        <option value="2">Night</option>
-                    </select><br>
 
-                    <!-- /ko -->
-                    <button data-bind="click:function(d,e){$component.request_schedule_change(false)}">get value</button>
 
+
+
+
+                <!-- not working module-->
+
+                <div class="" data-bind="visible: isNotWorking">
+                    <div class="mt-2">
+
+
+                        <!--ko if:$component.selected_workday-->
+                        <div class="caption-header">Would you like to Work instead?</div><br>
+                        <label class="caption-header" for="shifts">Choose a shift:</label><br>
+
+                        <select name="shifts" id="shifts" class="form-select mt-4" style="max-width:300px;">
+                            <option value="0">Morning</option>
+                            <option value="1">Afternoon</option>
+                            <option value="2">Night</option>
+                        </select><br>
+
+                        <!-- /ko -->
+                        <button data-bind="click:function(d,e){$component.request_schedule_change(false)}" class="btn btn-primary">Submit</button>
+
+                    </div>
                 </div>
-            </div>
 
+
+            </div>
 
         </div>
 
+
+
+
+
+
     </div>
+
+    </div>
+
+
 
 
 
