@@ -96,7 +96,7 @@
     display: block;
     border-radius: 40px;
     position: relative; }
-    .toggle label:after {
+    .toggle label::after {
       content: "";
       position: absolute;
       top: 0px;

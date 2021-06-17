@@ -222,7 +222,43 @@ request_schedule_change(condition){
     
 
 }
- 
+
+//=========================================================================
+//styling components
+
+
+
+toggle_Mode(){
+    const table=document.getElementById('hs-table');
+
+
+if (table.classList.contains('table-dark')){
+    table.classList.remove('table-dark');
+    table.classList.add('table-light');
+    document.getElementById('t-foot').classList.add('bg-light');
+    document.getElementById('t-foot').classList.remove('bg-dark');
+    document.getElementById('t-foot').style.borderColor="#292b2c";
+    document.getElementById('ChangeSchedule').firstElementChild.style.color="rgba(0,0,0,0.7)";
+    document.getElementById('pagination').style.color="#292b2c";
+} 
+
+else{
+    table.classList.add('table-dark');
+    table.classList.remove('table-light');
+    document.getElementById('t-foot').classList.remove('bg-light');
+    document.getElementById('t-foot').classList.add('bg-dark');
+    document.getElementById('t-foot').style.borderColor="#fff";
+    document.getElementById('ChangeSchedule').firstElementChild.style.color="gainsboro";
+    document.getElementById('pagination').style.color="gainsboro";
+   
+
+}
+
+
+
+}
+
+
 
 
 }
@@ -233,7 +269,11 @@ ko.components.register("dash-schedule", {
 
     viewModel: VM,
     template: template
+
+
 })
+
+
 
 
 
