@@ -24,6 +24,8 @@ class VM{
   whaleGrab(){
     document.getElementById('img_grab').classList.add('_moveOnLoad');
 }
+
+
 }
 
 

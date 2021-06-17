@@ -67,6 +67,10 @@ navigateDashboard(){
 
 }
 
+navigateMainPage(){
+    this._PageRoot.currentPage('host-site');
+}
+
 _onClickAction(){
     console.log('hello');
 }
