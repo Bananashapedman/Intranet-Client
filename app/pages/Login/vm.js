@@ -7,6 +7,8 @@ class VM{
     constructor(params){
         this._PageRoot=params;
         //=====================================================================
+        this.showLoader=ko.observable(false);
+        //=====================================================================
         this.username=ko.observable();
         this.password=ko.observable();
         this.emp_ID=ko.observable();
@@ -33,14 +35,18 @@ class VM{
                 return serviceData;
             }
             else
+
                 throw Error(response.statusText);
         } catch (e) {
+            this.showLoader(false);
+
             alert(e.message);
         }
     }
 
 async _onLogin(){
-
+    
+    this.showLoader(true);
     this.emp_ID= await this._login(this.username(),this.password());
     if (this.emp_ID!=null){
         config.user_id=this.username();
@@ -48,7 +54,7 @@ async _onLogin(){
         config.employee_id=this.emp_ID;
         console.log(JSON.stringify(config));
         
-
+        
        this.navigateDashboard();
     }
     
@@ -56,7 +62,7 @@ async _onLogin(){
 
 
 navigateDashboard(){
-
+    this.showLoader(false);
     this._PageRoot.currentPage('host-dashboard');
 
 }
