@@ -56,6 +56,7 @@ async _onLogin(){
         
         
        this.navigateDashboard();
+       
     }
     
 }
@@ -63,12 +64,14 @@ async _onLogin(){
 
 navigateDashboard(){
     this.showLoader(false);
+    config.dash_body();
     this._PageRoot.currentPage('host-dashboard');
 
 }
 
 navigateMainPage(){
     this._PageRoot.currentPage('host-site');
+    config.site_body();
 }
 
 _onClickAction(){

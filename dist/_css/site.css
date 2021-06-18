@@ -1,4 +1,12 @@
+/*body color shift site-dashboard*/
+.body-site{
+  background-color: #fff;
+}
 
+.body-dash{
+  background: rgb(66,71,77);
+  background: linear-gradient(144deg, rgba(66,71,77,1) 0%, rgba(97,100,112,1) 35%, rgba(135,129,146,1) 100%);
+}
 
 
 .site-container{

@@ -15,6 +15,9 @@ class HELP{
         this.employee_name=ko.observable();
         this.employee_face=ko.observable();
 
+
+        this.body_color=ko.observable(true);
+
         
 
         
@@ -53,6 +56,14 @@ class HELP{
         _d!=11 ? _d++ : _d=0;
         return _d;
 
+    }
+
+    dash_body(){
+        document.body.classList.add('body-dash');
+    }
+
+    site_body(){
+        document.body.classList.remove('body-dash');
     }
 
 }
