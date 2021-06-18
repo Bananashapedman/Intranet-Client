@@ -4,8 +4,12 @@
 }
 
 .body-dash{
-  background: rgb(66,71,77);
-  background: linear-gradient(144deg, rgba(66,71,77,1) 0%, rgba(97,100,112,1) 35%, rgba(135,129,146,1) 100%);
+  background: linear-gradient(128deg, rgba(103,115,129,1) 0%, rgba(130,160,170,1) 42%, rgba(163,207,205,1) 100%);
+
+}
+
+.helpgrab span{
+  background: black !important;
 }
 
 

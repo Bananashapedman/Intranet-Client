@@ -1,20 +1,29 @@
-<div class="fix-head-foot container-fluid">
-    <div class="hs-thead bg-dark">
-        <div class="toggle" style="margin-left:10px;" data-bs-toggle="tooltip" data-bs-placement="top"
+<div  class="fix-head-foot container-fluid">
+    <div  style="position:relative;" class="hs-thead bg-dark">   
+
+        <!--pagination flex1-->
+        <div  class="toggle" data-bs-toggle="tooltip" data-bs-placement="top"  
             title="Switch mode">
             <input  type="checkbox" id="toggle-switch" />
-            <label data-bind="click:toggle_Mode"  for="toggle-switch"><span class="screen-reader-text">Toggle Color Scheme</span></label>
+            <label data-bind="click:toggle_Mode"  for="toggle-switch"><span class="screen-reader-text">Toggle Color Scheme</span></label> <!-- color mode-->
         </div>
 
-        <div class="input-group rounded ">
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:1.3rem;" class="pagination" id="pagination">  <!--pagination flex2-->
+            <i class="page-scale fas fa-angle-left fa-fw"
+                data-bind="click:function(){$component._fetchProgram(false)}"></i>
 
-            <!-- <input id="hs-search" type="search" class="form-control-md  hs-rounded" placeholder=" Search.." /> -->
-            </span>
+            <span data-bind="text:$component.show_month()"></span>
+
+            <i class="fas fa-angle-right fa-fw  page-scale"
+                data-bind="click:function(){$component._fetchProgram(true)}"></i>
         </div>
+
+       
+
     </div>
-    <div id="table-flow" class="table-flow container-fluid"
-        data-bind="event:{scroll:function(d,e){$component._fixedHeader($element)}}">
-        <table id="hs-table" class="table table-responsive table-dark table-hover table-striped">
+    <div id="table-flow" class="table-flow container-fluid"   
+        data-bind="event:{scroll:function(d,e){$component._fixedHeader($element)}}">   <!--overflow container-->
+        <table id="hs-table" class="table table-responsive table-dark table-hover table-striped">  <!--actual table-->
             <thead>
                 <tr>
                     <th>Date</th>
@@ -41,23 +50,18 @@
             </tbody>
         </table>
     </div>
-    <div class="hs-tfoot bg-dark " id="t-foot">
-        <a style="visibility: hidden;" id="ChangeSchedule" class="blue-tooltip" data-bs-toggle="tooltip"
-            data-bs-placement="bottom" title="Request a Change"><i id="cog" class="  fa fa-cog  fa-lg fa-fw"
-                style="color:gainsboro"></i></a>
+    <div class="hs-tfoot bg-dark" id="t-foot">  <!--table footer-->
+<!--flex item 1-->
+        <a id="browserPrint" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Download PDF"><i 
+            class="fas fa-file-pdf fa-lg fa-fw" style="color: #d9534f;"></i></a>
+   
 
-        <div class="pagination" id="pagination">
-            <i class="page-scale fas fa-angle-left fa-fw"
-                data-bind="click:function(){$component._fetchProgram(false)}"></i>
 
-            <span data-bind="text:$component.show_month()"></span>
-
-            <i class="fas fa-angle-right fa-fw  page-scale"
-                data-bind="click:function(){$component._fetchProgram(true)}"></i>
-        </div>
-        <a id="browserPrint" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Download PDF"><i
-                class="fas fa-file-pdf fa-lg fa-fw" style="color: #d9534f;"></i></a>
+<!--flex item 2-->        
+        <a href="../../../../../ea/index.html"  style=" width:26.66px; height:32px; padding:0 !important;" id="ChangeSchedule" class="blue-tooltip " data-bs-toggle="tooltip"
+        data-bs-placement="bottom" title="Request a Change"><img style="padding-right:5px;" class="img-fluid" src="https://gist.githubusercontent.com/Bananashapedman/c5ba57b9882de0fa23db8c759d1bdefd/raw/ee0c10e5ed807f07f3cbdd82d636ad2fbee7ab3f/merde.svg" alt="EA"></a>
     </div>
+
 
 
     <div class="curtain " id="curtain" data-bind="click:function(d,e){$component.curtain_drop(e)}">

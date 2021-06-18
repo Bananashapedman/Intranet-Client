@@ -1,0 +1,28 @@
+{
+  "name": "roster",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass app-sass/_app.scss dist/_css/app.css",
+    "sass-min": "node-sass app-sass/_app.scss dist/_css/app.css --output-style compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "knockout": "^3.5.1"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bananashapedman/EA-SITE.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bananashapedman/EA-SITE/issues"
+  },
+  "homepage": "https://github.com/Bananashapedman/EA-SITE#readme",
+  "description": ""
+}

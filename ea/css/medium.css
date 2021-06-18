@@ -1,0 +1,17 @@
+@media only screen and (min-width:768px){
+
+.hero-s h1{
+    padding:10px 90px;
+    font-size:3rem;
+}
+ 
+.hero-s p{
+    font-size:1.2rem;
+}
+h6{
+    font-size:1.2rem;
+}
+.flex-diax{
+    flex-direction: row;
+}
+}

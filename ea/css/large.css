@@ -1,0 +1,96 @@
+@media only screen and (min-width:992px){
+
+    .container-super{
+        padding: 0 40px;
+    }
+
+    .hero h1{
+        font-size:3rem;
+        
+    }
+    .text-heavy p{
+        font-size:1rem;
+    }
+    h6{
+        font-size:1.3rem;
+    }
+
+    .hero-s h1{
+        padding:20px 130px;
+        font-size:3.5rem;
+        margin-bottom:50px;
+        
+    }
+    .hero-s p{
+        font-size:1.2rem;
+    }
+
+   
+
+ 
+
+    .resp-nav{
+        margin-left:auto;
+    }
+
+    
+   .lg-list{
+       display:block;
+   }
+
+
+   .menu-pos{
+       width:fit-content;
+   }
+   
+
+
+ 
+
+   #diaxirisi::before,
+   #programmata_ergasias::before,
+   #ergani::before,
+   #ergazomenoi::before,
+   #adeies::before,
+   #anafores::before,
+   #diaxirisi_genika::before,
+   #services::before
+   
+   {
+       display: block; 
+       content: ""; 
+       margin-top: -45px; 
+       height: 45px; 
+       visibility: hidden; 
+       pointer-events: none;
+   
+   }
+   
+   .dd-list a:active{
+       color:#DF5400;
+   }
+   
+
+   .bg-flex{
+       flex-direction: row;
+   }
+
+
+
+   .bg-flex-one,.bg-flex-two{
+    justify-content: center;
+     padding:200px;
+     font-size:1.6rem;
+     
+}
+
+.bg-flex .scale{
+    transform: scale(2);
+    opacity:1;
+    transition:all 1s cubic-bezier(.36,.4,.59,1.12) ;
+    
+}
+
+
+}
+

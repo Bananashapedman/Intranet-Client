@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
+
+$primary: #4cc9f0;
+$pink: #f72585;
+$magenta: #b5179e;
+$purple: #7209b7;
+$blue: #4361ee;
+$default: #d1d5da;
+$defaultBg: #2f363d;
+$dark: #c9d1d9;
+$darkBg: #0d1117;
+
+$easingFunction: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+.btn-ham {
+	width: 3rem;
+    height: 2rem;
+	padding: 0.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	&:focus {
+		outline: 0;
+	}
+}
+
+.btn-hamburger {
+    outline:none;
+	.line {
+		border-radius:10px;
+		position: relative;
+		transition: all 0.3s $easingFunction;
+		&,
+		&::before,
+		&::after {
+			width: 100%;
+			height: 5px;
+			background-color: rgba(0,0,0,0.6);
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			transition: inherit;
+		}
+		&::before {
+			top: -16px;
+		}
+		&::after {
+			bottom: -16px;
+		}
+	}
+	&.open {
+		.line {
+			transform: rotate(-45deg);
+			background-color: transparent;
+			&::before {
+				transform: translateY(16px);
+				background-color: #DF5400;
+			}
+			&::after {
+				transform: translateY(-16px) rotate(90deg);
+				background-color: #DF5400;
+			}
+		}
+	}
+}

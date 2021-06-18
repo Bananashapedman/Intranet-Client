@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
+.btn-ham {
+  width: 3rem;
+  height: 2rem;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: transparent;
+  border: 0;
+  cursor: pointer; }
+  .btn-ham:focus {
+    outline: 0; }
+
+.btn-hamburger {
+  outline: none; }
+  .btn-hamburger .line {
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .btn-hamburger .line, .btn-hamburger .line::before, .btn-hamburger .line::after {
+      width: 100%;
+      height: 5px;
+      background-color: rgba(0, 0, 0, 0.6); }
+    .btn-hamburger .line::before, .btn-hamburger .line::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: inherit; }
+    .btn-hamburger .line::before {
+      top: -16px; }
+    .btn-hamburger .line::after {
+      bottom: -16px; }
+  .btn-hamburger.open .line {
+    transform: rotate(-45deg);
+    background-color: transparent; }
+    .btn-hamburger.open .line::before {
+      transform: translateY(16px);
+      background-color: #DF5400; }
+    .btn-hamburger.open .line::after {
+      transform: translateY(-16px) rotate(90deg);
+      background-color: #DF5400; }

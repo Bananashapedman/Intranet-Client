@@ -324,7 +324,7 @@ table{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     display:flex;
-    justify-content: flex-start;
+    
     align-items: center;
 
 }
@@ -344,9 +344,7 @@ table{
 
 }
 
-.hs-tfoot{
-    padding:5px;
-}
+
 .hs-tfoot div{
    
     border-radius:5px;
