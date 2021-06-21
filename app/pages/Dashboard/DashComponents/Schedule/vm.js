@@ -34,7 +34,7 @@ class VM {
 
     //changing shift on ANY day
     async _fetchChangeShift(condition){
-        console.log(e.target);
+        
         let month=this.day_obj().date;
         month= month.split("-");
         
