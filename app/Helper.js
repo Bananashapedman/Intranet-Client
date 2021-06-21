@@ -18,10 +18,20 @@ class HELP{
 
         this.body_color=ko.observable(true);
 
+        //============ dev visibility 
+
+        this.powered=ko.observable(false);
+
         
 
         
     }
+
+    powered_switch(condition){
+        this.powered(condition);
+    }
+
+    
 
     pick_Face(){
        

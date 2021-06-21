@@ -281,7 +281,22 @@ table{
     max-width: 1000px;
     min-height:10px;
     padding:0px !important;
+    position:relative;
     
+}
+
+.curtain-table{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,0.7);
+    z-index:100;
+    margin-top:40px;
+    display:Flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .fix-head-foot{
@@ -645,4 +660,17 @@ table{
       opacity: 0;
       z-index: -1;
     }
+  }
+
+
+  /*powered by logo*/
+
+  .developed{
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position:absolute;
+      bottom:10px;
+      right:10px;
   }

@@ -12,6 +12,7 @@ class VM {
 
         this.isWorking=ko.observable();
         this.isNotWorking=ko.observable();
+        this.curtain_table=ko.observable(false);
         this.day_obj=ko.observable();
         //===============================================================            
         this.shift_list=["Morning","Afternoon","Night"];
@@ -73,7 +74,6 @@ class VM {
     if (this.curDate.getMonth()==month){
                 this._fetchProgram(false);
     }
-
     else{
         this._fetchProgram(true);
     }
@@ -85,17 +85,16 @@ class VM {
 
 
     async _fetchProgram(IsNext) {
+        this.curtain_table(true);
                 
         let month_selection = null;
         if (IsNext === false || IsNext === undefined) {
             month_selection = config.current_Month;
             this.show_month((config.display_month(month_selection-1)));
-
         }
         else {
             month_selection = config.next_Month;
             this.show_month((config.display_month(month_selection-1)));
-
         }
 
         let endPoint = `${this.endPoint}/${config.employee_id}/${config.current_Year}/${month_selection}`
@@ -120,6 +119,7 @@ class VM {
             if (response.ok) {
                 if (isJSON){
                     let serviceData = await response.json();
+                    this.curtain_table(false);
                     return serviceData;
                 }
             
@@ -128,6 +128,7 @@ class VM {
                 throw Error(response.statusText);
         }
         catch (e) {
+            this.curtain_table(false);
             console.log(e.message);
         }
     }
@@ -144,6 +145,17 @@ class VM {
         var translate = "translate(0," + ele.scrollTop + "px)";
         document.querySelector("thead").style.transform = translate;
 
+    }
+
+    _fixedCurtain(ele,e){
+        var translate = "translate(0," + ele.scrollTop + "px)";
+        document.getElementById("curtain-table").style.transform = translate;
+        
+    }
+
+    _fixedElements(ele){
+        this._fixedHeader(ele);
+        this._fixedCurtain(ele);
     }
 
 
@@ -234,7 +246,7 @@ if (table.classList.contains('table-dark')){
     document.getElementById('t-foot').classList.remove('bg-dark');
     document.getElementById('t-foot').style.borderColor="#292b2c";
     document.getElementById('ChangeSchedule').firstElementChild.style.color="rgba(0,0,0,0.7)";
-    document.getElementById('pagination').style.color="#292b2c";
+    // document.getElementById('pagination').style.color="#292b2c";
 } 
 
 else{
@@ -244,7 +256,7 @@ else{
     document.getElementById('t-foot').classList.add('bg-dark');
     document.getElementById('t-foot').style.borderColor="#fff";
     document.getElementById('ChangeSchedule').firstElementChild.style.color="gainsboro";
-    document.getElementById('pagination').style.color="gainsboro";
+    // document.getElementById('pagination').style.color="gainsboro";
    
 
 }

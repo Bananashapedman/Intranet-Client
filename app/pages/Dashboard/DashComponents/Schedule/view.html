@@ -22,7 +22,12 @@
 
     </div>
     <div id="table-flow" class="table-flow container-fluid"   
-        data-bind="event:{scroll:function(d,e){$component._fixedHeader($element)}}">   <!--overflow container-->
+        data-bind="event:{scroll:function(d,e){$component._fixedElements($element)}}">   <!--overflow container-->
+
+        <div id="curtain-table" class="curtain-table" data-bind="visible:curtain_table">
+            <i class="fas fa-spinner fa-spin fa-3x" style="color:#fff; cursor:default;"></i> 
+        </div>
+
         <table id="hs-table" class="table table-responsive table-dark table-hover table-striped">  <!--actual table-->
             <thead>
                 <tr>
@@ -30,7 +35,7 @@
                     <th>Day</th>
                     <th>Shift</th>
                     <th>Start</th>
-                    <th></th>
+                    <th>Modify</th>
                 </tr>
             </thead>
             <tbody>

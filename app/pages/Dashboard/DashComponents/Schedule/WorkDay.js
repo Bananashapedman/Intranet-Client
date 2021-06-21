@@ -34,7 +34,6 @@ export class WorkDay {                     //building a day
     }
 
     _shift() {
-
         let temp = this.s_Ar[this.z - 1];
 
         if (this.t == 1) {
