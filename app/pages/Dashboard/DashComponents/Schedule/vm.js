@@ -13,9 +13,7 @@ class VM {
         this.isWorking=ko.observable();
         this.isNotWorking=ko.observable();
         this.day_obj=ko.observable();
-        
-     
-        
+        //===============================================================            
         this.shift_list=["Morning","Afternoon","Night"];
         this.workCollection = ko.observable();
         this.show_month = ko.observable();
@@ -35,9 +33,10 @@ class VM {
 
     //changing shift on ANY day
     async _fetchChangeShift(condition){
-        debugger;
+        ;
         let month=this.day_obj().date;
         month= month.split("-");
+        
         let endPoint_Change=null;
 
         if (condition==true){
@@ -52,8 +51,9 @@ class VM {
         
         await this._callFetchService(endPoint_Change,false);
 
-        if (this.curDate.getMonth()==month){
+      
 
+        if (this.curDate.getMonth()==month[1]-1){
               this._fetchProgram(false);
        }
 
@@ -71,9 +71,7 @@ class VM {
     await this._callFetchService(endPoint_Change,false);
 
     if (this.curDate.getMonth()==month){
-        
-        this._fetchProgram(false);
-
+                this._fetchProgram(false);
     }
 
     else{
@@ -87,8 +85,7 @@ class VM {
 
 
     async _fetchProgram(IsNext) {
-        console.log(IsNext)
-        //    let month_selection = IsNext ? config.current_Month : config.next_Month; 
+                
         let month_selection = null;
         if (IsNext === false || IsNext === undefined) {
             month_selection = config.current_Month;
@@ -101,7 +98,6 @@ class VM {
 
         }
 
-        console.log(month_selection);
         let endPoint = `${this.endPoint}/${config.employee_id}/${config.current_Year}/${month_selection}`
         let response = await this._callFetchService(endPoint,true);
         let ar = JSON.parse(response[0].Program);
@@ -216,7 +212,6 @@ request_schedule_change(condition){
         const select= document.getElementById('shifts');
         this.day_obj().z=select.value;
         this.day_obj().t=1;
-        
         this._fetchChangeShift(condition);
         this.curtain_drop();
     
