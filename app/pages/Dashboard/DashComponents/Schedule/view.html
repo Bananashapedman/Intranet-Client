@@ -2,10 +2,10 @@
     <div  style="position:relative;" class="hs-thead bg-dark">   
 
         <!--pagination flex1-->
-        <div  class="toggle" data-bs-toggle="tooltip" data-bs-placement="top"  
+        <div style="margin-left:10px;" class="toggle" data-bs-toggle="tooltip" data-bs-placement="top"  
             title="Switch mode">
-            <input  type="checkbox" id="toggle-switch" />
-            <label data-bind="click:toggle_Mode"  for="toggle-switch"><span class="screen-reader-text">Toggle Color Scheme</span></label> <!-- color mode-->
+            <input onclick="toggle_Mode()" type="checkbox" id="toggle-switch" />
+            <label for="toggle-switch"><span class="screen-reader-text">Toggle Color Scheme</span></label> <!-- color mode-->
         </div>
 
         <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:1.3rem; " class="pagination" id="pagination">  <!--pagination flex2-->
@@ -24,7 +24,7 @@
     <div id="table-flow" class="table-flow container-fluid"   
         data-bind="event:{scroll:function(d,e){$component._fixedElements($element)}}">   <!--overflow container-->
 
-        <div id="curtain-table" class="curtain-table" data-bind="visible:curtain_table">
+        <div id="curtain-table" class="curtain-table border-bottom" data-bind="visible:curtain_table">
             <i class="fas fa-spinner fa-spin fa-3x" style="color:#fff; cursor:default;"></i> 
         </div>
 
@@ -35,7 +35,7 @@
                     <th>Day</th>
                     <th>Shift</th>
                     <th>Start</th>
-                    <th>Modify</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -46,8 +46,8 @@
                     <td data-bind="text: day_string"></td>
                     <td data-bind="text: shift"></td>
                     <td data-bind="text: shift_start"></td>
-                    <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Request a Change"
-                        data-bind="click:function(d,e){$component.grab_day(d)}"><i class="fas fa-pencil-alt"></i></td>
+                    <td style="text-align: center;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Request a Change"
+                        data-bind="click:function(d,e){$component.grab_day(d)}"><i class="fas fa-pencil-alt text" ></i></td>
                 </tr>
                 <!-- /ko -->
                 <!-- /ko -->
@@ -58,14 +58,11 @@
     <div class="hs-tfoot bg-dark" id="t-foot">  <!--table footer-->
 <!--flex item 1-->
         <a id="browserPrint" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Download PDF"><i 
-            class="fas fa-file-pdf fa-lg fa-fw" style="color: #d9534f;"></i></a>
+            class="fas fa-file-pdf fa-lg " style="color: #d9534f;"></i></a>
    
 
 
 <!--flex item 2-->        
-        <a href="../../../../../ea/index.html"  style=" width:26.66px; height:32px; padding:0 !important;" id="ChangeSchedule" class="blue-tooltip " data-bs-toggle="tooltip"
-        data-bs-placement="bottom" title="Request a Change"><img style="padding-right:5px;" class="img-fluid" src="https://gist.githubusercontent.com/Bananashapedman/c5ba57b9882de0fa23db8c759d1bdefd/raw/ee0c10e5ed807f07f3cbdd82d636ad2fbee7ab3f/merde.svg" alt="EA"></a>
-    </div>
 
 
 
@@ -90,7 +87,7 @@
                     <div class="flex-group">
                         <div class="caption-header mb-3">Request a day off </div>
                         <button class="btn btn-success my-1"
-                            data-bind="click:function(d,e){$component.request_schedule_change(true)}">Accept</button>
+                            data-bind="click:function(d,e){$component.request_schedule_change(true,e)}">Accept</button>
                     </div>
 
 
@@ -112,27 +109,17 @@
 
                             <!-- /ko -->
                             <button class="btn btn-primary "
-                                data-bind="click:function(d,e){$component.request_schedule_change(false)}">Submit</button>
+                                data-bind="click:function(d,e){$component.request_schedule_change(false,e)}">Submit</button>
                         </div>
 
                     </div>
                 </div>
 
 
-
-
-
-
-
-
-
-
                 <!-- not working module-->
 
                 <div class="" data-bind="visible: isNotWorking">
                     <div class="mt-2">
-
-
                         <!--ko if:$component.selected_workday-->
                         <div class="caption-header">Would you like to Work instead?</div><br>
                         <label class="caption-header" for="shifts">Choose a shift:</label><br>
@@ -144,27 +131,12 @@
                         </select><br>
 
                         <!-- /ko -->
-                        <button data-bind="click:function(d,e){$component.request_schedule_change(false)}" class="btn btn-primary">Submit</button>
+                        <button data-bind="click:function(d,e){$component.request_schedule_change(false,e)}" class="btn btn-primary">Submit</button>
 
                     </div>
                 </div>
-
-
             </div>
-
         </div>
-
-
-
-
-
-
+     </div>
     </div>
-
-    </div>
-
-
-
-
-
 </div>

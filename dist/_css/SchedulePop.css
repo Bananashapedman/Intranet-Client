@@ -50,6 +50,7 @@
     margin-top:20px;
     font-size:1.2rem;
     font-weight:500;
+    margin-bottom:50px;
 }
 
 
@@ -67,10 +68,11 @@
     
     .request-change.container-fluid{
         
-        height:900px;
+        height:910px;
         max-width:1000px;
-        margin-top:90px;
+        
         border-radius:15px;
+        margin:90px 10px 0px 10px;
     }
 
 }

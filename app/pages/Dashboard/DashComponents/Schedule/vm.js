@@ -34,7 +34,7 @@ class VM {
 
     //changing shift on ANY day
     async _fetchChangeShift(condition){
-        ;
+        console.log(e.target);
         let month=this.day_obj().date;
         month= month.split("-");
         
@@ -220,12 +220,14 @@ class VM {
     }
 
 
-request_schedule_change(condition){
+request_schedule_change(condition, trigger){
+        console.log(trigger);
         const select= document.getElementById('shifts');
         this.day_obj().z=select.value;
         this.day_obj().t=1;
         this._fetchChangeShift(condition);
         this.curtain_drop();
+   
     
 
 }
@@ -235,35 +237,6 @@ request_schedule_change(condition){
 
 
 
-toggle_Mode(){
-    const table=document.getElementById('hs-table');
-
-
-if (table.classList.contains('table-dark')){
-    table.classList.remove('table-dark');
-    table.classList.add('table-light');
-    document.getElementById('t-foot').classList.add('bg-light');
-    document.getElementById('t-foot').classList.remove('bg-dark');
-    document.getElementById('t-foot').style.borderColor="#292b2c";
-    document.getElementById('ChangeSchedule').firstElementChild.style.color="rgba(0,0,0,0.7)";
-    // document.getElementById('pagination').style.color="#292b2c";
-} 
-
-else{
-    table.classList.add('table-dark');
-    table.classList.remove('table-light');
-    document.getElementById('t-foot').classList.remove('bg-light');
-    document.getElementById('t-foot').classList.add('bg-dark');
-    document.getElementById('t-foot').style.borderColor="#fff";
-    document.getElementById('ChangeSchedule').firstElementChild.style.color="gainsboro";
-    // document.getElementById('pagination').style.color="gainsboro";
-   
-
-}
-
-
-
-}
 
 
 

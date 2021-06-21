@@ -23,10 +23,6 @@
 
 
 
-<div class="developed">
-    powered by <p> <span>e|advance</span><img></p>
-</div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
         integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
@@ -38,6 +34,36 @@
 
     <script src="./_js/vendors.js"></script>
     <script src="./_js/thesis.js"></script>
+    <script>
+       function toggle_Mode(){
+    const table=document.getElementById('hs-table');
+
+
+if (table.classList.contains('table-dark')){
+    table.classList.remove('table-dark');
+    table.classList.add('table-light');
+    document.getElementById('t-foot').classList.add('bg-light');
+    document.getElementById('t-foot').classList.remove('bg-dark');
+    document.getElementById('t-foot').style.borderColor="#292b2c";
+    // document.getElementById('pagination').style.color="#292b2c";
+} 
+
+else{
+    table.classList.add('table-dark');
+    table.classList.remove('table-light');
+    document.getElementById('t-foot').classList.remove('bg-light');
+    document.getElementById('t-foot').classList.add('bg-dark');
+    document.getElementById('t-foot').style.borderColor="#fff";
+    // document.getElementById('pagination').style.color="gainsboro";
+   
+
+}
+
+
+
+}
+
+    </script>
 </body>
 
 </html>
