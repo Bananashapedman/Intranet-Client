@@ -232,8 +232,7 @@ print() {
     let $ph = $("#printingHost");
     $ph.html("");
     let _html = $(this.printDiv).html();
-    console.log(_html);
-    $ph.html("ektoras");
+    $ph.html(_html);
     setTimeout(window.print, 333);
 }
 

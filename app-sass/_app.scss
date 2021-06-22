@@ -124,7 +124,7 @@
 
 
   @media screen {
-    #applicationHost {
+    #PageHost {
         display: block;
     }
     #printingHost {
@@ -133,7 +133,7 @@
 }
 
 @media print {
-    #applicationHost {
+    #PageHost {
         display: none !important;
     }
     #printingHost {

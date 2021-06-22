@@ -144,13 +144,13 @@
   word-wrap: normal !important; }
 
 @media screen {
-  #applicationHost {
+  #PageHost {
     display: block; }
   #printingHost {
     display: none; } }
 
 @media print {
-  #applicationHost {
+  #PageHost {
     display: none !important; }
   #printingHost {
     padding: 0;
