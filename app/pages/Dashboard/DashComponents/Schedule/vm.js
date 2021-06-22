@@ -2,13 +2,14 @@ import ko from 'knockout'
 import template from "./view.html"
 import { Work_Collection } from "./Work_Collection"
 import { config } from "app/Helper"
+import $ from "jQuery"
 
 
 class VM {
 
     constructor(params) {
-        
-       this.curDate=new Date();
+        this.printDiv=null;       
+        this.curDate=new Date();
 
         this.isWorking=ko.observable();
         this.isNotWorking=ko.observable();
@@ -31,10 +32,9 @@ class VM {
 
     }
 
-
     //changing shift on ANY day
     async _fetchChangeShift(condition){
-        
+       
         let month=this.day_obj().date;
         month= month.split("-");
         
@@ -49,11 +49,8 @@ class VM {
 
         }
 
-        
         await this._callFetchService(endPoint_Change,false);
-
-      
-
+    
         if (this.curDate.getMonth()==month[1]-1){
               this._fetchProgram(false);
        }
@@ -122,8 +119,7 @@ class VM {
                     this.curtain_table(false);
                     return serviceData;
                 }
-            
-            }
+                        }
             else
                 throw Error(response.statusText);
         }
@@ -150,14 +146,12 @@ class VM {
     _fixedCurtain(ele,e){
         var translate = "translate(0," + ele.scrollTop + "px)";
         document.getElementById("curtain-table").style.transform = translate;
-        
-    }
+     }
 
     _fixedElements(ele){
         this._fixedHeader(ele);
         this._fixedCurtain(ele);
     }
-
 
     _logOut() {
         alert('logouts');
@@ -179,7 +173,6 @@ class VM {
             this.selected_shift(day_obj.z);
             this.curtain_lift();
         }
-
         else {
             alert("Whoops, unfortunately you cannot change the past :'[");
         }
@@ -203,23 +196,6 @@ class VM {
         }
     }
  
-
-
-
-
-    curtain_drop(){
-       
-        document.getElementById('curtain').classList.add('hide-curtain');
-    }
-    curtain_lift(){
-        document.getElementById('curtain').classList.remove('hide-curtain');
-    }
-    kill_Prop(e){
-        e.stopPropagation();
-
-    }
-
-
 request_schedule_change(condition, trigger){
         console.log(trigger);
         const select= document.getElementById('shifts');
@@ -227,17 +203,39 @@ request_schedule_change(condition, trigger){
         this.day_obj().t=1;
         this._fetchChangeShift(condition);
         this.curtain_drop();
-   
-    
-
-}
+ }
 
 //=========================================================================
 //styling components
 
+curtain_drop(){
+       
+    document.getElementById('curtain').classList.add('hide-curtain');
+} 
+curtain_lift(){
+    document.getElementById('curtain').classList.remove('hide-curtain');
+}
+kill_Prop(e){
+    e.stopPropagation();
+
+}
+
+//============================================================================
+//html print handling
 
 
+startWatching(element){
+    this.printDiv=element;
+}
 
+print() {
+    let $ph = $("#printingHost");
+    $ph.html("");
+    let _html = $(this.printDiv).html();
+    console.log(_html);
+    $ph.html("ektoras");
+    setTimeout(window.print, 333);
+}
 
 
 

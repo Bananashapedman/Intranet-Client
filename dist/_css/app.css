@@ -142,3 +142,16 @@
   position: absolute !important;
   width: 1px;
   word-wrap: normal !important; }
+
+@media screen {
+  #applicationHost {
+    display: block; }
+  #printingHost {
+    display: none; } }
+
+@media print {
+  #applicationHost {
+    display: none !important; }
+  #printingHost {
+    padding: 0;
+    display: block; } }
