@@ -76,7 +76,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  max-width: 140px; }
+  max-width: 140px;
+ }
   .toggle span {
     margin: 0 0.5rem; }
   .toggle input[type="checkbox"] {
@@ -84,7 +85,7 @@
     width: 0;
     visibility: hidden; }
     .toggle input[type="checkbox"]:checked + label {
-      background: teal; }
+      background: rgb(172, 165, 165); }
     .toggle input[type="checkbox"]:checked + label:after {
       left: calc(100% - 2px);
       transform: translateX(-100%); }
@@ -92,7 +93,7 @@
     cursor: pointer;
     width: 55px;
     height: 25px;
-    background: #628281;
+    background: rgb(172, 165, 165);
     display: block;
     border-radius: 40px;
     position: relative; }

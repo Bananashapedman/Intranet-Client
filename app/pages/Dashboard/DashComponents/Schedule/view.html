@@ -83,25 +83,26 @@
 
             <div class="request-change container-fluid shadow-sm"
                 data-bind="click:function(d,e){$component.kill_Prop(e)}">
-                <i style="position:absolute; top:10px; right:10px; color:#d9534f" class="far fa-times-circle fa-lg"
+                <i style="position:absolute; top:2px; right:8px; color:#d9534f; " class="far fa-times-circle fa-2x" 
                     data-bind="click:$component.curtain_drop()"></i>
 
 
 
                 <div class="shift-title">Request Schedule Change </div>
                 <div class="d-flex justify-content-center shift-date"><span
-                        data-bind="text:$component.show_month()"></span> &nbsp; <span
+                        data-bind="text:$component.show_month()"></span><span
                         data-bind="text:$component.selected_day()"></span></div>
 
 
 
-                <div class="d-flex flex-column justify-content-center">
+                <div class="d-flex flex-column justify-content-center ">
                     <div data-bind="visible: isWorking" class="">
 
-                        <div class="flex-group">
-                            <div class="caption-header mb-3">Request a day off </div>
-                            <button class="btn btn-success my-1"
-                                data-bind="click:function(d,e){$component.request_schedule_change(true)}">Accept</button>
+                        <div class="flex-group ">
+                            <div class="caption-header mb-3 ">Request a day off?
+                            </div>
+                            <button class="btn btn-success ml-5 mt-2 mb-5"
+                                data-bind="click:function(d,e){$component.request_schedule_change(true)}">Yes</button>
                         </div>
 
 
@@ -135,7 +136,7 @@
                     <div class="" data-bind="visible: isNotWorking">
                         <div class="mt-2">
                             <!--ko if:$component.selected_workday-->
-                            <div class="caption-header">Would you like to Work instead?</div><br>
+                            <div style="width:100%;" class="text-center caption-header mb-5">Cancel your day off</div><br>
                             <label class="caption-header" for="shifts">Choose a shift:</label><br>
 
                             <select name="shifts" id="shifts" class="form-select mt-4" style="max-width:300px;">

@@ -105,7 +105,7 @@
   visibility: hidden; }
 
 .toggle input[type="checkbox"]:checked + label {
-  background: teal; }
+  background: #aca5a5; }
 
 .toggle input[type="checkbox"]:checked + label:after {
   left: calc(100% - 2px);
@@ -115,7 +115,7 @@
   cursor: pointer;
   width: 55px;
   height: 25px;
-  background: #628281;
+  background: #aca5a5;
   display: block;
   border-radius: 40px;
   position: relative; }

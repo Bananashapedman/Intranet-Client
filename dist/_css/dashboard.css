@@ -433,7 +433,6 @@ table{
     height:70px;
     position:absolute;
     top:0px;
-    
     z-index:1500;
     position:absolute;
     left:50%;
@@ -493,11 +492,12 @@ table{
 
     }
     .hs-alert{
-        width:30%;
-        margin-left:150px;
-        top:20px;
+        margin-left:173px;
+        height:90px;
+        justify-content: center;
+        
     }
-
+  
 
 
 }
@@ -506,7 +506,7 @@ table{
 @media only screen and (min-width: 1400px){
 
     .table-flow{
-        max-width:1000px
+        max-width:1000px;
     }
 
 }

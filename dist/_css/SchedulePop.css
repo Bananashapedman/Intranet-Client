@@ -48,10 +48,25 @@
 }
 .shift-date{
     margin-top:20px;
-    font-size:1.2rem;
-    font-weight:500;
+    font-weight:bolder;
     margin-bottom:50px;
+    
 }
+.shift-date span{
+    font-size:larger;
+}
+
+.caption-header{
+    font-size:1.3rem;
+    font-weight:500;
+}
+
+.flex-group button{
+    
+    width:65px;
+    
+}
+
 
 
 
