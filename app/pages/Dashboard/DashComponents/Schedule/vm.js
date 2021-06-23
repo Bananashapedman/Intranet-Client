@@ -58,6 +58,8 @@ class VM {
         else{
             this._fetchProgram(true);
         }
+
+        config._triggerSuccess();
     }
 
     
@@ -174,7 +176,7 @@ class VM {
             this.curtain_lift();
         }
         else {
-            alert("Whoops, unfortunately you cannot change the past :'[");
+            config._triggerPast();
         }
     }
 
@@ -203,6 +205,7 @@ request_schedule_change(condition, trigger){
         this.day_obj().t=1;
         this._fetchChangeShift(condition);
         this.curtain_drop();
+        config._triggerSuccess();
  }
 
 //=========================================================================
@@ -219,6 +222,17 @@ kill_Prop(e){
     e.stopPropagation();
 
 }
+
+
+_triggerSuccess(){
+    debugger;
+    $("#yes-alert").slideDown("slow", function(){
+        setTimeout(function(){$('#yes-alert').slideUp(); }, 3000);
+    });
+   
+}
+
+
 
 //============================================================================
 //html print handling

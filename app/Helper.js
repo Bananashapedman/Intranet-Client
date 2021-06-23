@@ -1,4 +1,5 @@
 import ko from 'knockout';
+import $ from 'jQuery';
 
 class HELP{
     constructor(){
@@ -75,6 +76,24 @@ class HELP{
     site_body(){
         document.body.classList.remove('body-dash');
     }
+
+
+
+    
+_triggerSuccess(){
+    $("#yes-alert").slideDown("slow", function(){
+        setTimeout(function(){$('#yes-alert').slideUp(); }, 450);
+    });
+   
+}
+
+_triggerPast(){
+    $("#no-alert").slideDown("slow", function(){
+        setTimeout(function(){$('#no-alert').slideUp(); }, 450);
+    });
+   
+}
+
 
 }
 
