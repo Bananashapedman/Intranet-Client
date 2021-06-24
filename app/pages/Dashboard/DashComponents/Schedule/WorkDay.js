@@ -41,6 +41,7 @@ export class WorkDay {                     //building a day
             return temp;
         }
         else {
+            temp="OFF";
             return temp;
         }
     }

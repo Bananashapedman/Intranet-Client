@@ -14,16 +14,17 @@
     display:none;
 }
 
-.request-change{
+ .request-change{
     position:relative;
     background-color: #fff;
     height:600px;
     width:400px;
     z-index:99999 !important;
-    /* margin-top:90px; */
-    /* border-radius:15px; */
+
     
-}
+} 
+
+
 
 .request-change.container-fluid{
    
@@ -83,9 +84,8 @@
     
     .request-change.container-fluid{
         
-        height:910px;
-        max-width:1000px;
-        
+        max-width: 400px;
+        height:800px;
         border-radius:15px;
         margin:90px 10px 0px 10px;
     }
