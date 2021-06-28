@@ -84,7 +84,7 @@
   background: transparent;
   border: 0;
   cursor: pointer;
-  z-index: 1000;
+ 
   position: relative; }
 
 .btn-steal:focus {

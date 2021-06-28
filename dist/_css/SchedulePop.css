@@ -16,13 +16,20 @@
 
  .request-change{
     position:relative;
-    background-color: #fff;
+    background-color: #292b2c;
+    color:#ddd !important;
     height:600px;
     width:400px;
-    z-index:99999 !important;
+    z-index:1001 !important;
 
     
 } 
+
+.request-change i{
+    font-size:1.5rem !important;
+}
+
+.caption-header{color:#ddd !important;}
 
 
 
@@ -45,12 +52,14 @@
     align-items: center;
     margin:0 auto;
     border-bottom:1px solid gainsboro;
+    color:#fff !important; 
      
 }
 .shift-date{
     margin-top:20px;
     font-weight:bolder;
     margin-bottom:50px;
+    color:#ddd !important;
     
 }
 .shift-date span{

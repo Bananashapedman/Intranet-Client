@@ -83,7 +83,7 @@
 
             <div class="request-change container-fluid shadow-sm"
                 data-bind="click:function(d,e){$component.kill_Prop(e)}">
-                <i style="position:absolute; top:2px; right:8px; color:#d9534f; " class="far fa-times-circle fa-2x" 
+                <i style="position:absolute; top:2px; right:8px; color:#d9534f; " class="far fa-times-circle fa-lg" 
                     data-bind="click:$component.curtain_drop()"></i>
 
 
@@ -102,7 +102,7 @@
                         <div class="flex-group ">
                             <div class="caption-header mb-3 ">Request a day off?</div>
 
-                            <button class="btn btn-success ml-5 mt-2 mb-5" data-bind="click:function(d,e){$component.request_schedule_change(true)}">Yes</button>
+                            <button class="btn btn-success ml-5 mt-2 mb-2" data-bind="click:function(d,e){$component.request_schedule_change(true)}">Yes</button>
                             <hr class="mb-5">
                         </div>
 
@@ -117,7 +117,7 @@
 
                                 <label class="caption-header" for="shifts">Choose a new shift:</label>
 
-                                <select name="shifts" id="shifts" class="form-select mt-4" style="max-width:300px;">
+                                <select name="shifts" id="shifts" class="form-select mt-2" style="max-width:300px;">
                                     <option value="1">Morning</option>
                                     <option value="2">Afternoon</option>
                                     <option value="3">Night</option>
@@ -141,7 +141,7 @@
                            
                             <label class="caption-header" for="shifts">Choose a shift:</label><br>
 
-                            <select name="shifts" id="shifts" class="form-select mt-4" style="max-width:300px;">
+                            <select name="shifts" id="shifts" class="form-select mt-2" style="max-width:300px;">
                                 <option value="0">Morning</option>
                                 <option value="1">Afternoon</option>
                                 <option value="2">Night</option>
