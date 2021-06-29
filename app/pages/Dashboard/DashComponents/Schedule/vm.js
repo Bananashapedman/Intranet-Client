@@ -8,6 +8,9 @@ import $ from "jQuery"
 class VM {
 
     constructor(params) {
+
+
+
         this.printDiv=null;       
         this.curDate=new Date();
 
@@ -231,6 +234,9 @@ _triggerSuccess(){
     });
    
 }
+
+
+
 
 
 

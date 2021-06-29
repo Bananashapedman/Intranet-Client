@@ -54,7 +54,7 @@
                     <tr>
                         <td data-bind="text: day_num"></td>
                         <td data-bind="text: day_string"></td>
-                        <td data-bind="text: shift"></td>
+                        <td data-bind="text: shift, style:dayNumStyle"></td>
                         <td data-bind="text: shift_start"></td>
                         <td style="text-align: center;" data-bs-toggle="tooltip" data-bs-placement="bottom"
                             title="Request a Change" data-bind="click:function(d,e){$component.grab_day(d)}"><i
@@ -81,7 +81,7 @@
 
         <div class="curtain " id="curtain" data-bind="click:function(d,e){$component.curtain_drop(e)}">
 
-            <div class="request-change container-fluid shadow-sm"
+            <div id="rq-change" class="request-change container-fluid shadow-sm"
                 data-bind="click:function(d,e){$component.kill_Prop(e)}">
                 <i style="position:absolute; top:2px; right:8px; color:#d9534f; " class="far fa-times-circle fa-lg" 
                     data-bind="click:$component.curtain_drop()"></i>

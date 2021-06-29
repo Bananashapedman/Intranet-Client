@@ -1,3 +1,5 @@
+import ko from 'knockout';
+
 export class WorkDay {                     //building a day
 
     constructor(obj) {
@@ -13,6 +15,24 @@ export class WorkDay {                     //building a day
         this.day_string = this._day_string();
         this.shift = this._shift();
         this.shift_start = this._shift_start();
+        //=====================================================================
+
+        this.dayNumStyle = ko.pureComputed(() => {
+            
+            if(this.shift==this.shift.toUpperCase()) {
+                return {
+                    
+                    "font-weight":"700"
+                } 
+
+            }
+            else{
+                return {"font-weight":"400", "color":"green"};
+                
+            }
+     
+        });
+
     }
 
     _month() {
@@ -41,7 +61,7 @@ export class WorkDay {                     //building a day
             return temp;
         }
         else {
-            temp="OFF";
+            temp="off";
             return temp;
         }
     }

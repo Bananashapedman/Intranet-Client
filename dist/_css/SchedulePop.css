@@ -21,24 +21,22 @@
     height:600px;
     width:400px;
     z-index:1001 !important;
-
-    
-} 
-
+   
+}
+.request-change.light{
+    background-color: #fff;
+    color:#1d1e1f !important;
+}
 .request-change i{
     font-size:1.5rem !important;
 }
-
 .caption-header{color:#ddd !important;}
-
-
 
 .request-change.container-fluid{
    
     width:100%;
     height:100%;
 }
-
 
 /*-----------------------------------------------------------------*/
 
@@ -53,19 +51,16 @@
     margin:0 auto;
     border-bottom:1px solid gainsboro;
     color:#fff !important; 
-     
-}
+     }
 .shift-date{
     margin-top:20px;
     font-weight:bolder;
     margin-bottom:50px;
     color:#ddd !important;
-    
-}
+    }
 .shift-date span{
     font-size:larger;
 }
-
 .caption-header{
     font-size:1.3rem;
     font-weight:500;
@@ -77,13 +72,10 @@
     
 }
 
-
-
-
-
-
-
-
+.temp-glow{
+    transition: all 0.5s ease;
+    color:green;
+}
 
 @media only screen and (min-width: 992px){  /*large break for BS5*/
 
