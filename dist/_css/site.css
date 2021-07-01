@@ -41,12 +41,12 @@
   
       }
    
-  .site img{
-      height:80px;
-      width:auto;
-      margin-left:2vw;
-      z-index:1;
-  }
+      .site img{
+        height:80px;
+        width:auto;
+        margin-left:2vw;
+        z-index:1;
+    }
   .nav-list{
       list-style-type: none;
       margin-left:auto;
@@ -627,11 +627,7 @@
     }
     
     
-    .hero-right img{
-      width:50px;
 
-    }
-    
     
     
     /*nav*/
