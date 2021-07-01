@@ -89,8 +89,6 @@ class VM {
     async _fetchProgram(IsNext) {
        
         this.curtain_table(true);
-        debugger;
-                
         let month_selection = null;
         if (IsNext === false || IsNext === undefined) {
             month_selection = config.current_Month;
