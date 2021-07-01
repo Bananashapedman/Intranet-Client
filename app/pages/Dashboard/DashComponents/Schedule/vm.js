@@ -87,7 +87,9 @@ class VM {
 
 
     async _fetchProgram(IsNext) {
+       
         this.curtain_table(true);
+        debugger;
                 
         let month_selection = null;
         if (IsNext === false || IsNext === undefined) {
@@ -101,6 +103,7 @@ class VM {
 
         let endPoint = `${this.endPoint}/${config.employee_id}/${config.current_Year}/${month_selection}`
         let response = await this._callFetchService(endPoint,true);
+        
         let ar = JSON.parse(response[0].Program);
         this.workCollection(new Work_Collection(ar));
         this._adjustData();
@@ -122,8 +125,9 @@ class VM {
                 if (isJSON){
                     let serviceData = await response.json();
                     this.curtain_table(false);
-                    return serviceData;
-                }
+                    return serviceData; 
+
+                              }
                         }
             else
                 throw Error(response.statusText);
@@ -228,7 +232,7 @@ kill_Prop(e){
 
 
 _triggerSuccess(){
-    debugger;
+   
     $("#yes-alert").slideDown("slow", function(){
         setTimeout(function(){$('#yes-alert').slideUp(); }, 3000);
     });

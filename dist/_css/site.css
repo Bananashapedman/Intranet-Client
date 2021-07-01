@@ -537,6 +537,8 @@
         .hero-right img{
             max-width:300px;
         }
+
+    
     }
 
 
@@ -626,10 +628,8 @@
     
     
     .hero-right img{
-        max-width:400px;
-        height:auto;
-        margin: auto;
-    
+      width:50px;
+
     }
     
     
