@@ -42,7 +42,7 @@
       }
    
       .site img{
-        height:80px;
+        height:60px;
         width:auto;
         margin-left:2vw;
         z-index:1;
@@ -185,7 +185,7 @@
   .hero img{
       
       animation: whale 15s ease 0s infinite normal forwards;
-      max-width:250px;
+      max-width:200px;
       height:auto;
       margin:0 auto !important;
       transition: transform 10s ease;
@@ -218,7 +218,7 @@
   }
   
   .hero-left h3{
-      font-size:4rem;
+      font-size:3rem;
       font-weight:700;
       animation: bounce 2s ease 0s 1 normal forwards;
       color:steelblue;
@@ -253,9 +253,7 @@
   .hero-left button:hover{
     cursor:pointer;
   }
-  
-  
-  
+
   
   
   
