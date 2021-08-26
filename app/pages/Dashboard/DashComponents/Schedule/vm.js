@@ -35,7 +35,6 @@ class VM {
 
     }
 
-    //changing shift on ANY day
     async _fetchChangeShift(condition){
        
         let month=this.day_obj().date;
@@ -88,8 +87,7 @@ class VM {
 
 
     async _fetchProgram(IsNext) {
-        debugger;
-       
+
         this.curtain_table(true);
         let month_selection = null;
         if (IsNext === false || IsNext === undefined) {
