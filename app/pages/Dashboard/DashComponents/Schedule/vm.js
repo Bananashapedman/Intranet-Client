@@ -51,6 +51,7 @@ class VM {
            endPoint_Change=`${this.endPoint_Change}/${config.employee_id}/${this.day_obj().date}/${this.day_obj().z}/${1}`;
 
         }
+       
 
         await this._callFetchService(endPoint_Change,false);
     
@@ -87,6 +88,7 @@ class VM {
 
 
     async _fetchProgram(IsNext) {
+        debugger;
        
         this.curtain_table(true);
         let month_selection = null;
@@ -101,11 +103,13 @@ class VM {
 
         let endPoint = `${this.endPoint}/${config.employee_id}/${config.current_Year}/${month_selection}`
         let response = await this._callFetchService(endPoint,true);
-        
+       
         let ar = JSON.parse(response[0].Program);
+        console.log(ar);
+        
         this.workCollection(new Work_Collection(ar));
         this._adjustData();
-        config.pick_Face();  // weird position but okay!
+        config.pick_Face();  
     }
 
     async _callFetchService(request, isJSON) {
@@ -122,6 +126,7 @@ class VM {
             if (response.ok) {
                 if (isJSON){
                     let serviceData = await response.json();
+     
                     this.curtain_table(false);
                     return serviceData; 
 
@@ -168,6 +173,7 @@ class VM {
     //handling schedule changes
 
     grab_day(day_obj) {
+       
         this.day_obj(day_obj);
           let date_current=new Date();
 
@@ -192,6 +198,7 @@ class VM {
     }
 
     working(value){
+        
         if (value==0){
             this.isWorking(false);
             this.isNotWorking(true);
@@ -204,7 +211,7 @@ class VM {
     }
  
 request_schedule_change(condition, trigger){
-        console.log(trigger);
+        
         const select= document.getElementById('shifts');
         this.day_obj().z=select.value;
         this.day_obj().t=1;

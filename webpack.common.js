@@ -43,7 +43,6 @@ module.exports = {
             "pages": pagesPath,
             "jquery": libsPath + "/jquery/jquery.min.js",
             "jQuery": "jquery",
-            "jquery-ui": libsPath + "/jquery-ui/jquery-ui.min.js",
             "knockout": libsPath + "/knockout/knockout.js",
             // "bootstrap":libsPath + "/bootstrap/bootstrap.min.js",
             // "bootstrap-esm":libsPath + "/bootstrap/bootstrap.esm.min.js",
@@ -52,22 +51,14 @@ module.exports = {
         }
     },
 
-    plugins: [
-        new BomPlugin(true)   //gia unicode
-    ],
 
     optimization: {
         splitChunks: {
             cacheGroups: {
-                eaLib: {
-                    test: /[\\/]_libs\\ea\\ea.js/, 
-                    name: 'ea',
-                    chunks: 'all'
-                },
                 commons: {
-                    test: /[\\/]_libs\\(jquery|jquery-ui|knockout)[\\/]/,  
+                    test: /[\\/]_libs\\(jquery|knockout)[\\/]/,  
                     name: 'vendors',
-                    chunks: 'all'
+                    
                 }
             }
         }
