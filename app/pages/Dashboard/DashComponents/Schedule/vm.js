@@ -245,7 +245,7 @@ _triggerSuccess(){
 
 
 //============================================================================
-//html print handling
+
 
 
 startWatching(element){

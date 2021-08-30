@@ -53,6 +53,9 @@ class VM{
 
     _logOut(){
         config.root_page.show_Login();
+        config.user_id=null;
+        config.user_pwd=null;
+        config.employee_id=null;
     }
 
 
