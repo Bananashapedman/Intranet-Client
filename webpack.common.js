@@ -23,7 +23,8 @@ module.exports = {
                     minimize: false 
                 }
             }]
-        }, {
+        },
+         {
             test: /\.svgcc$/,                
             loader: 'svg-inline-loader'   
         }, {

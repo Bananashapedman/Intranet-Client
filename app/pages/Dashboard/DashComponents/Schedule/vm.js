@@ -83,9 +83,6 @@ class VM {
   }
 
 
-
-
-
     async _fetchProgram(IsNext) {
 
         this.curtain_table(true);
