@@ -11,21 +11,15 @@ class HELP{
         this.current_Month=this.d.getMonth()+1;
         this.next_Month=this.calc_Next_Month();
         this.current_Year=this.d.getFullYear();
-
         this.month_array = ["January","February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         this.employee_name=ko.observable();
         this.employee_face=ko.observable();
-
-
         this.body_color=ko.observable(true);
 
         //============ dev visibility 
 
         this.powered=ko.observable(false);
-
-        
-
-        
+  
     }
 
     powered_switch(condition){
