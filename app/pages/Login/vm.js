@@ -35,11 +35,9 @@ class VM{
                 return serviceData;
             }
             else
-
                 throw Error(response.statusText);
         } catch (e) {
             this.showLoader(false);
-
             alert(e.message);
         }
     }
@@ -53,9 +51,7 @@ async _onLogin(){
         config.user_pwd=this.password();
         config.employee_id=this.emp_ID;
         console.log(JSON.stringify(config));
-        
-        
-       this.navigateDashboard();
+        this.navigateDashboard();
        
     }
     
