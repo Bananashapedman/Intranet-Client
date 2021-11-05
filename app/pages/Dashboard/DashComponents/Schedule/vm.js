@@ -90,15 +90,19 @@ class VM {
         if (IsNext === false || IsNext === undefined) {
             month_selection = config.current_Month;
             this.show_month((config.display_month(month_selection-1)));
+
         }
         else {
             month_selection = config.next_Month;
             this.show_month((config.display_month(month_selection-1)));
+
+            
         }
 
         let endPoint = `${this.endPoint}/${config.employee_id}/${config.current_Year}/${month_selection}`
         let response = await this._callFetchService(endPoint,true);
-       
+        console.log(month_selection);
+
         let ar = JSON.parse(response[0].Program);
         console.log(ar);
         

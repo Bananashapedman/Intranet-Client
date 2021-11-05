@@ -52,13 +52,13 @@ class HELP{
 
 
     display_month(num){
-        return this.month_array[num];
 
+            return this.month_array[num];
     }
 
     calc_Next_Month() {
         let _d = this.d.getMonth()+1;
-        _d!=11 ? _d++ : _d=0;
+        _d!=12 ? _d++ : _d=0;
         return _d;
 
     }
