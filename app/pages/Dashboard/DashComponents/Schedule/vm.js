@@ -260,6 +260,8 @@ print() {
     let $ph = $("#printingHost");
     $ph.html("");
     let _html = $(this.printDiv).html();
+    //let th = $("table>thead>tr", _html)
+    //th.css("display","none");
     $ph.html(_html);
     setTimeout(window.print, 333);
 }

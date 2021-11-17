@@ -7,19 +7,18 @@ class pageRoot{
         this.params=params;
         this.currentPage=ko.observable("host-site");
         config.root_page=this;
-
    }
 
    show_Login(){
        this.currentPage("host-login");
    }
+
    showme(){
        console.log(this);
    }
 }
 
 ko.components.register("page-host",{
-
     viewModel:pageRoot,
     template:template
 });

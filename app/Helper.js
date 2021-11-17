@@ -3,7 +3,6 @@ import $ from 'jQuery';
 
 class HELP{
     constructor(){
-        
         this.d=new Date();
         this.user_id=null;
         this.user_pwd=null;
@@ -17,16 +16,12 @@ class HELP{
         this.body_color=ko.observable(true);
 
         //============ dev visibility 
-
         this.powered=ko.observable(false);
-  
     }
 
     powered_switch(condition){
         this.powered(condition);
     }
-
-    
 
     pick_Face(){
        
@@ -44,23 +39,14 @@ class HELP{
         }
     }// to trexw sthn Fetch (anagastika)
 
-
-    
-    
-
-
-
-
     display_month(num){
-
-            return this.month_array[num];
+        return this.month_array[num];
     }
 
     calc_Next_Month() {
         let _d = this.d.getMonth()+1;
         _d!=12 ? _d++ : _d=0;
         return _d;
-
     }
 
     dash_body(){
@@ -70,28 +56,22 @@ class HELP{
     site_body(){
         document.body.classList.remove('body-dash');
     }
-
-
-
     
-_triggerSuccess(){
-    $("#yes-alert").slideDown("slow", function(){
-        setTimeout(function(){$('#yes-alert').slideUp(); }, 450);
-    });
-   
+    _triggerSuccess() {
+        $("#yes-alert").slideDown("slow", function () {
+            setTimeout(function () { $('#yes-alert').slideUp(); }, 450);
+        });
+    }
+
+    _triggerPast() {
+        $("#no-alert").slideDown("slow", function () {
+            setTimeout(function () { $('#no-alert').slideUp(); }, 450);
+        });
+    }
 }
-
-_triggerPast(){
-    $("#no-alert").slideDown("slow", function(){
-        setTimeout(function(){$('#no-alert').slideUp(); }, 450);
-    });
-   
-}
-
-
-}
-
-export let config=new HELP();
+// ============================================================================
+export let config = new HELP();
+// ============================================================================
 
 
 

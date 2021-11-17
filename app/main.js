@@ -1,16 +1,9 @@
 import ko from "knockout"
-
 import "pages/_pageRegister"
 
-
-
 class App{
-    
-    constructor(){
-        this.currentPage = ko.observable();
-           }
-    _selectPage(name){
-        this.currentPage(name);
+    constructor() {
+        // place holder for public properties
     }
 }
 
