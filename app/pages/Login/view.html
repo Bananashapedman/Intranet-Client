@@ -1,18 +1,11 @@
 <div class="hs-lg-container-ff">
 
-
-
-
     <div data-bind="visible: showLoader" class="loading-spinner">
         <div class="loading-inner">
             <i class="fas fa-spinner fa-spin fa-3x" style="color:#fff; cursor:default;"></i>
-                <span class="loading-text">Loading...</span>
+            <span class="loading-text">Loading...</span>
         </div>
     </div>
-
-
-
-
 
     <div class="login-container pos-r ">
         <div class="logo-container">
@@ -20,8 +13,6 @@
             <img style="width:100px; height:auto;"
                 src="https://lh3.googleusercontent.com/rhbqaeF3erR3GphC1HjFp_fYCWRV0-K_bsRwLW4HKas1vTljIILqYhKZxKNk29MUHQfrMtdp5ipCBjMlLKBufZYQU98BoagcDLg7hussz8ZckzLFJpfCLEwpHOT9mEy8Oc50m-X2=s300-p-k">
         </div>
-
-
 
         <div class="input-container">
             <div class="form-group ">
@@ -42,14 +33,12 @@
                     </div>
                     <input type="password" class="form-control " id="pwd" placeholder="Password" value="password"
                         data-bind="value:password">
-
                 </div>
                 <div class="mt-3">
                     <input data-bind="click:_showPass" class="form-check-input not" type="checkbox" value=""
                         id="loginCheck">
                     <label for="input"> Show Password</label>
                 </div>
-
             </div>
             <button data-bind="click:$component._onLogin.bind($component)" class="mt-5 login-button">Login</button>
         </div>

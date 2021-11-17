@@ -2,7 +2,7 @@
     <!--navbar-->
 
 
-    <button class="btn-steal btn-bento d-lg-none " id="hs-ham" data-bind="click:function(d,e){$component._ham()}" >
+    <button class="btn-steal btn-bento d-lg-none " id="hs-ham" data-bind="click:function(d,e){$component._ham()}">
         <span class="square"></span>
         <span class="square"></span>
         <span class="square"></span>
@@ -14,23 +14,22 @@
         <span class="square"></span>
     </button>
 
-
-
     <div class="profile">
         <!--flex-2-->
 
-        <div class="face-container"><img class="img-fluid" data-bind="attr:{src:$component.config.employee_face}" alt="Emp Face"></div>
+        <div class="face-container"><img class="img-fluid" data-bind="attr:{src:$component.config.employee_face}"
+                alt="Emp Face"></div>
 
         <div class="hs-drop-container">
-            <a style="margin:auto; min-width:100px;" href="#" class="emp-name text-center" data-bind="text:$component.config.employee_name"></a>
+            <a style="margin:auto; min-width:100px;" href="#" class="emp-name text-center"
+                data-bind="text:$component.config.employee_name"></a>
             <ul class="hs-drop-list">
                 <li><a class="d-flex align-center b-fix" href="#"><i class="fas fa-user "></i><span>Profile</span></a>
                 </li>
                 <li><a class="d-flex align-center" href="#"><i class="fas fa-cog "></i><span>Settings</span></a></li>
                 <hr class="dashed">
-                <li><a
-                       data-bind="click:$component._logOut.bind($component)"
-                      id="s-out" class="d-flex align-center red" href="#"><i class="fas fa-power-off"></i><span>Sign
+                <li><a data-bind="click:$component._logOut.bind($component)" id="s-out" class="d-flex align-center red"
+                        href="#"><i class="fas fa-power-off"></i><span>Sign
                             Out</span></a></li>
             </ul>
         </div>
@@ -38,86 +37,61 @@
 </nav>
 <!--navbar end-->
 
-<!-- alerts -->
 
+<!-- alerts -->
 <div id="yes-alert" class="alert alert-success collapse  hs-alert" role="alert">
 
     <div class="extra-alert-container">
-
         <i class="far fa-check-circle fa-2x"></i>
-
         <p>Schedule Updated!</p>
-   
     </div>
-
- 
 </div>
-
-
 
 <div id="no-alert" class="alert alert-danger collapse hs-alert " role="alert">
 
     <div class="extra-alert-container">
-
         <i class="fas fa-exclamation-triangle fa-2x"></i>
-
-        <p>Whoops! Can't Do That</p>
-   
+        <p>Cannot Change Past Dates!</p>
     </div>
 </div>
-
-
 <!-- alerts  end-->
 
 
-
-
-    <!--sidebar menu-->
+<!--sidebar menu-->
 <div class="hs-sidebar bg-dark text-white" id="hs-sidebar">
 
     <a href="#" class="text-decoration-none pb-3 d-flex justify-content-center "><img
             style="width:90px; height:auto; margin-left:10px"
-            src="https://lh3.googleusercontent.com/HxnXC3rxGwEVPpMU5SHmn4-15yveaTk6fgkHslTDiACo-BuLlMJcDSPTEyx4XQ7ngjsDAsB2hX-1q76zFLpaTYH8VAXSQ4wGIyOhf-syWPAO49bxUK4j_KGZdwy8yBtwpK2mFqHb=w2400" alt="to be filled"></a>
+            src="https://lh3.googleusercontent.com/HxnXC3rxGwEVPpMU5SHmn4-15yveaTk6fgkHslTDiACo-BuLlMJcDSPTEyx4XQ7ngjsDAsB2hX-1q76zFLpaTYH8VAXSQ4wGIyOhf-syWPAO49bxUK4j_KGZdwy8yBtwpK2mFqHb=w2400"
+            alt="to be filled"></a>
 
-    
     <ul class="nav nav-pills my-2" id="small-list">
-        
-
-        <li><a class="nav-link text-white active" data-bind="click:function(d,e){ $component._selectPage($element, 'dash-schedule')}"><i class="fas fa-calendar-alt fa-fw"></i><span>Schedule</span></a>
+        <li><a class="nav-link text-white active"
+                data-bind="click:function(d,e){ $component._selectPage($element, 'dash-schedule')}"><i
+                    class="fas fa-calendar-alt fa-fw"></i><span>Schedule</span></a>
         </li>
-        <li><a class="nav-link text-white" data-bind="click:function(d,e){$component._selectPage($element,'dash-clothing')}"><i class="fas fa-tshirt fa-fw"></i><span>Clothing</span></a></li>
-        <li><a class="nav-link text-white" data-bind="click:function(d,e){$component._selectPage($element,'dash-clothing')} , c"><i class="fas fa-certificate fa-fw"></i><span>Certificates</span></a>
+        <li><a class="nav-link text-white"
+                data-bind="click:function(d,e){$component._selectPage($element,'dash-clothing')}"><i
+                    class="fas fa-tshirt fa-fw"></i><span>Clothing</span></a></li>
+        <li><a class="nav-link text-white"
+                data-bind="click:function(d,e){$component._selectPage($element,'dash-clothing')} , c"><i
+                    class="fas fa-certificate fa-fw"></i><span>Certificates</span></a>
         </li>
-        <li><a class="nav-link text-white " data-bind="click:function(d,e){$component._selectPage($element,'dash-clothing')}"><i class="fas fa-comments fa-fw"></i><span>Contact</span></a></li>
+        <li><a class="nav-link text-white "
+                data-bind="click:function(d,e){$component._selectPage($element,'dash-clothing')}"><i
+                    class="fas fa-comments fa-fw"></i><span>Contact</span></a></li>
         <hr class="dashed">
-        <li><a href="../../../ea/index.html" target="_blank" class="nav-link text-white " ><i class="fas fa-info-circle fa-fw"></i><span style="letter-spacing: 0.3px;">Info</span></a></li>
-
+        <li><a href="../../../ea/index.html" target="_blank" class="nav-link text-white "><i
+                    class="fas fa-info-circle fa-fw"></i><span style="letter-spacing: 0.3px;">Info</span></a></li>
     </ul>
-
-
-
 
 </div>
 <!--sidebar menu end-->
 
-   <!--ko if:$component.dash_content -->
-
-<div class="content"  data-bind="component:{name:$component.dash_content, params:{}}" >
-
-
+<!--ko if:$component.dash_content -->
+<div class="content" data-bind="component:{name:$component.dash_content, params:{}}"></div>
+<!-- /ko -->
 
 
-</div>
-
-     <!-- /ko -->
-
-
-     
-    <div class="cover d-none" id="cover" data-bind="click:$component._coverCollapse($element)"></div>
-    <!--darken background on sidebar display-->
-
-
-
-    
-
- 
+<!--darken background on sidebar display-->
+<div class="cover d-none" id="cover" data-bind="click:$component._coverCollapse($element)"></div>

@@ -1,5 +1,3 @@
-
-
 <div class="fix-head-foot container-fluid">
     <div style="position:relative;" class="hs-thead bg-dark">
 
@@ -22,10 +20,8 @@
             <i class="fas fa-angle-right fa-fw  page-scale"
                 data-bind="click:function(){$component._fetchProgram(true)}"></i>
         </div>
-
-
-
     </div>
+
     <div id="table-flow" class="table-flow container-fluid"
         data-bind="event:{scroll:function(d,e){$component._fixedElements($element)}}">
         <!--overflow container-->
@@ -33,8 +29,6 @@
         <div id="curtain-table" class="curtain-table border-bottom" data-bind="visible:curtain_table">
             <i class="fas fa-spinner fa-spin fa-3x" style="color:#fff; cursor:default;"></i>
         </div>
-
-
 
         <div data-bind="template: {afterRender: function(){$component.startWatching($element)}}">
             <table id="hs-table" class="table table-responsive table-dark table-hover table-striped">
@@ -62,7 +56,7 @@
                     </tr>
                     <!-- /ko -->
                     <!-- /ko -->
-                    
+
                 </tbody>
             </table>
         </div>
@@ -74,25 +68,21 @@
             title="Download PDF"><i class="fas fa-file-pdf fa-lg " style="color: #d9534f;"></i></a>
 
 
-
         <!--flex item 2-->
-
-
-
         <div class="curtain " id="curtain" data-bind="click:function(d,e){$component.curtain_drop(e)}">
 
             <div id="rq-change" class="request-change container-fluid shadow-sm"
                 data-bind="click:function(d,e){$component.kill_Prop(e)}">
-                <i style="position:absolute; top:2px; right:8px; color:#d9534f; " class="far fa-times-circle fa-lg" 
+                <i style="position:absolute; top:2px; right:8px; color:#d9534f; " class="far fa-times-circle fa-lg"
                     data-bind="click:$component.curtain_drop()"></i>
 
 
 
                 <div class="shift-title">Request Schedule Change </div>
+                
                 <div class="d-flex justify-content-center shift-date"><span
                         data-bind="text:$component.show_month()"></span><span
                         data-bind="text:$component.selected_day()"></span></div>
-                      
 
 
                 <div class="d-flex flex-column justify-content-center  " style="height:60%;">
@@ -102,12 +92,10 @@
                         <div class="flex-group ">
                             <div class="caption-header mb-3 ">Request a day off?</div>
 
-                            <button class="btn btn-success ml-5 mt-2 mb-2" data-bind="click:function(d,e){$component.request_schedule_change(true)}">Yes</button>
+                            <button class="btn btn-success ml-5 mt-2 mb-2"
+                                data-bind="click:function(d,e){$component.request_schedule_change(true)}">Yes</button>
                             <hr class="mb-5">
                         </div>
-
-
-
 
                         <div class="" id="collapseShiftChange">
 
@@ -126,7 +114,7 @@
                                 <!-- /ko -->
                                 <button class="btn btn-primary "
                                     data-bind="click:function(d,e){$component.request_schedule_change(false)}">Submit</button>
-                                    
+
                             </div>
 
                         </div>
@@ -138,7 +126,7 @@
                     <div class="" data-bind="visible: isNotWorking">
                         <div class="mt-2">
                             <!--ko if:$component.selected_workday-->
-                           
+
                             <label class="caption-header" for="shifts">Choose a shift:</label><br>
 
                             <select name="shifts" id="shifts" class="form-select mt-2" style="max-width:300px;">
@@ -158,6 +146,3 @@
         </div>
     </div>
 </div>
-
-
-

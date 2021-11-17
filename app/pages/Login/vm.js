@@ -1,33 +1,31 @@
 import ko from "knockout"
-import {config} from "app/Helper"
+import { config } from "app/Helper"
 import template from "./view.html"
 
 
-class VM{
-    constructor(params){
-        this._PageRoot=params;
+class VM {
+    constructor(params) {
+        this._PageRoot = params;
         //=====================================================================
-        this.showLoader=ko.observable(false);
+        this.showLoader = ko.observable(false);
         //=====================================================================
-        this.username=ko.observable();
-        this.password=ko.observable();
-        this.emp_ID=ko.observable();
-
-        this.ID=ko.observable();
+        this.username = ko.observable();
+        this.password = ko.observable();
+        this.emp_ID = ko.observable();
+        this.ID = ko.observable();
         this.endPoint = "https://thesis-api.azurewebsites.net/Thesis/GetProgram/1/2021/5";
 
     }
 
-
-    async _login(un,ps) { 
+    async _login(un, ps) {
         let request = "https://thesis-api.azurewebsites.net/Thesis/Login"
         try {
             let options = {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
-                },                
-                body: JSON.stringify({un,ps})
+                },
+                body: JSON.stringify({ un, ps })
             }
             let response = await fetch(request, options);
             if (response.ok) {
@@ -42,53 +40,50 @@ class VM{
         }
     }
 
-async _onLogin(){
-    
-    this.showLoader(true);
-    this.emp_ID= await this._login(this.username(),this.password());
-    if (this.emp_ID!=null){
-        config.user_id=this.username();
-        config.user_pwd=this.password();
-        config.employee_id=this.emp_ID;
-        console.log(JSON.stringify(config));
-        this.navigateDashboard();
-       
+    async _onLogin() {
+
+        this.showLoader(true);
+        this.emp_ID = await this._login(this.username(), this.password());
+        if (this.emp_ID != null) {
+            config.user_id = this.username();
+            config.user_pwd = this.password();
+            config.employee_id = this.emp_ID;
+            console.log(JSON.stringify(config));
+            this.navigateDashboard();
+        }
     }
-    
-}
 
 
-navigateDashboard(){
-    this.showLoader(false);
-    config.dash_body();
-    this._PageRoot.currentPage('host-dashboard');
-
-}
-
-navigateMainPage(){
-    this._PageRoot.currentPage('host-site');
-    config.site_body();
-}
-
-_onClickAction(){
-    console.log('hello');
-}
-
-
- _showPass() {
-    let pwd = document.getElementById('pwd');
-    if (pwd.type == 'password') {
-        pwd.type = "text";
+    navigateDashboard() {
+        this.showLoader(false);
+        config.dash_body();
+        this._PageRoot.currentPage('host-dashboard');
     }
-    else {
-        pwd.type = 'password';
+
+    navigateMainPage() {
+        this._PageRoot.currentPage('host-site');
+        config.site_body();
+    }
+
+    _onClickAction() {
+        console.log('hello');
+    }
+
+
+    _showPass() {
+        let pwd = document.getElementById('pwd');
+        if (pwd.type == 'password') {
+            pwd.type = "text";
+        }
+        else {
+            pwd.type = 'password';
+        }
     }
 }
-}
 
 
-ko.components.register("host-login",{
+ko.components.register("host-login", {
 
-    viewModel:VM,
-    template:template
+    viewModel: VM,
+    template: template
 });
