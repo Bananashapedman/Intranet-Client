@@ -1,58 +1,60 @@
-
-
 <div class="hs-lg-container-ff">
 
 
 
 
     <div data-bind="visible: showLoader" class="loading-spinner">
-        <i class="fas fa-spinner fa-spin fa-3x" style="color:#fff; cursor:default;"></i>    
-     </div>
-
-
-
-
-
-<div class="login-container pos-r ">
-    <div class="logo-container">
-        
-        <img style="width:100px; height:auto;" src="https://lh3.googleusercontent.com/rhbqaeF3erR3GphC1HjFp_fYCWRV0-K_bsRwLW4HKas1vTljIILqYhKZxKNk29MUHQfrMtdp5ipCBjMlLKBufZYQU98BoagcDLg7hussz8ZckzLFJpfCLEwpHOT9mEy8Oc50m-X2=s300-p-k">
+        <div class="loading-inner">
+            <i class="fas fa-spinner fa-spin fa-3x" style="color:#fff; cursor:default;"></i>
+                <span class="loading-text">Loading...</span>
+        </div>
     </div>
 
 
 
-    <div class="input-container">
-        <div class="form-group ">
-            <div class="input-group ">
-                <div class="input-group-prepend d-none">
-                    <span class="input-group-text form-control-lg even" id="inputGroupPrepend2"><i
-                            class="far fa-id-card  "></i></span>
-                </div>
-                <input type="text" class="form-control " id="ID" name="ID" data-bind="value:username" placeholder="Record Number" value="username">
-            </div>
+
+
+    <div class="login-container pos-r ">
+        <div class="logo-container">
+
+            <img style="width:100px; height:auto;"
+                src="https://lh3.googleusercontent.com/rhbqaeF3erR3GphC1HjFp_fYCWRV0-K_bsRwLW4HKas1vTljIILqYhKZxKNk29MUHQfrMtdp5ipCBjMlLKBufZYQU98BoagcDLg7hussz8ZckzLFJpfCLEwpHOT9mEy8Oc50m-X2=s300-p-k">
         </div>
 
-        <div class="form-group ">
-            <div class="input-group ">
-                <div class="input-group-prepend d-none">
-                    <span class="input-group-text form-control-lg even" id=""><i
-                            class="fas fa-lock  "></i></span>
+
+
+        <div class="input-container">
+            <div class="form-group ">
+                <div class="input-group ">
+                    <div class="input-group-prepend d-none">
+                        <span class="input-group-text form-control-lg even" id="inputGroupPrepend2"><i
+                                class="far fa-id-card  "></i></span>
+                    </div>
+                    <input type="text" class="form-control " id="ID" name="ID" data-bind="value:username"
+                        placeholder="Record Number" value="username">
                 </div>
-                <input type="password" class="form-control " id="pwd" placeholder="Password" value="password" data-bind="value:password">
-                
-            </div>
-            <div class="mt-3">
-                <input data-bind="click:_showPass" class="form-check-input not" type="checkbox" value="" id="loginCheck">
-                <label for="input"> Show Password</label>
             </div>
 
+            <div class="form-group ">
+                <div class="input-group ">
+                    <div class="input-group-prepend d-none">
+                        <span class="input-group-text form-control-lg even" id=""><i class="fas fa-lock  "></i></span>
+                    </div>
+                    <input type="password" class="form-control " id="pwd" placeholder="Password" value="password"
+                        data-bind="value:password">
+
+                </div>
+                <div class="mt-3">
+                    <input data-bind="click:_showPass" class="form-check-input not" type="checkbox" value=""
+                        id="loginCheck">
+                    <label for="input"> Show Password</label>
+                </div>
+
+            </div>
+            <button data-bind="click:$component._onLogin.bind($component)" class="mt-5 login-button">Login</button>
         </div>
-        <button data-bind="click:$component._onLogin.bind($component)" class="mt-5 login-button">Login</button>
+        <a href="#">Forgot Password?</a>
+        <!-- <i data-bind="click: navigateMainPage" style="color:#0000EE" class="fas fa-undo-alt fa-back fa-lg"></i> -->
+        <i data-bind="click: navigateMainPage" style="color:#0000EE" class="fas fa-arrow-left fa-back fa-lg"></i>
     </div>
-    <a href="#">Forgot Password?</a>
-    <!-- <i data-bind="click: navigateMainPage" style="color:#0000EE" class="fas fa-undo-alt fa-back fa-lg"></i> -->
-    <i data-bind="click: navigateMainPage" style="color:#0000EE"   class="fas fa-arrow-left fa-back fa-lg"></i>
 </div>
-</div>
-
-
