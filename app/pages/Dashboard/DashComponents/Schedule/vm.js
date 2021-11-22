@@ -10,10 +10,11 @@ class VM {
     constructor(params) {
 
 
-
+        this.endPoint = "https://thesis-api.azurewebsites.net/Thesis/GetProgram";
+        this.endPoint_Change = "https://thesis-api.azurewebsites.net/Thesis/ChangeDayProgram";
         this.printDiv = null;
         this.curDate = new Date();
-
+        //---------------------------------------------------------------------
         this.isWorking = ko.observable();
         this.isNotWorking = ko.observable();
         this.curtain_table = ko.observable(false);
@@ -25,13 +26,12 @@ class VM {
         this.selected_day = ko.observable();
         this.selected_workday = ko.observable();
         this.selected_shift = ko.observable();
-        this.endPoint = "https://thesis-api.azurewebsites.net/Thesis/GetProgram";
-        this.endPoint_Change = "https://thesis-api.azurewebsites.net/Thesis/ChangeDayProgram";
+
 
         this._fetchProgram();
 
         //changing days
-        //===============================================================
+        //=====================================================================
 
     }
     //-------------------------------------------------------------------------
@@ -73,6 +73,7 @@ class VM {
 
     //-------------------------------------------------------------------------
     async _fetchProgram(IsNext) {
+        debugger;
         this.curtain_table(true);
         let month_selection = null;
 
@@ -86,15 +87,16 @@ class VM {
         }
         let endPoint = `${this.endPoint}/${config.employee_id}/${config.current_Year}/${month_selection}`
         let response = await this._callFetchService(endPoint, true);
-        console.log(month_selection);
+       
         let ar = JSON.parse(response[0].Program);
-        console.log(ar);
+        
         this.workCollection(new Work_Collection(ar));
         this._adjustData();
         config.pick_Face();
     }
 
     async _callFetchService(request, isJSON) {
+        debugger;
         try {
             let options = {
                 method: "GET",
@@ -148,11 +150,6 @@ class VM {
     }
 
     //-------------------------------------------------------------------------
-    _logOut() {
-        alert('logouts');
-    }
-
-    //===============================================================================
     //handling schedule changes
 
     grab_day(day_obj) {
