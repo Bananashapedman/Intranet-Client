@@ -8,8 +8,6 @@ import $ from "jQuery"
 class VM {
 
     constructor(params) {
-
-
         this.endPoint = "https://thesis-api.azurewebsites.net/Thesis/GetProgram";
         this.endPoint_Change = "https://thesis-api.azurewebsites.net/Thesis/ChangeDayProgram";
         this.printDiv = null;
@@ -26,12 +24,7 @@ class VM {
         this.selected_day = ko.observable();
         this.selected_workday = ko.observable();
         this.selected_shift = ko.observable();
-
-
         this._fetchProgram();
-
-        //changing days
-        //=====================================================================
 
     }
     //-------------------------------------------------------------------------
@@ -73,7 +66,6 @@ class VM {
 
     //-------------------------------------------------------------------------
     async _fetchProgram(IsNext) {
-        debugger;
         this.curtain_table(true);
         let month_selection = null;
 
@@ -96,7 +88,6 @@ class VM {
     }
 
     async _callFetchService(request, isJSON) {
-        debugger;
         try {
             let options = {
                 method: "GET",
@@ -105,15 +96,12 @@ class VM {
                     Authorization: "Basic " + btoa(config.user_id + ":" + config.user_pwd)
                 }
             }
-
             let response = await fetch(request, options);
             if (response.ok) {
                 if (isJSON) {
                     let serviceData = await response.json();
-
                     this.curtain_table(false);
                     return serviceData;
-
                 }
             }
             else

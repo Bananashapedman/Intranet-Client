@@ -17,7 +17,6 @@ export class Work_Collection {   //building whole month
     }
 
     build_Days() {
-        debugger;
         let entries = [];
         for (let i = 0; i < this.monthly_schedule.length; i++) {
             entries.push( new WorkDay(this.monthly_schedule[i]));

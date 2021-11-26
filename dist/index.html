@@ -15,7 +15,7 @@
 <body style="overflow: hidden;">
 
     <div id="PageHost" 
-        style="position:absolute; left:0; top:0; right:0; bottom:0; height:1000px; " 
+        style="position:absolute; left:0; top:0; right:0; bottom:0; " 
         data-bind="component:{name:'page-host', params:$data}"></div>
 
     <div id="printingHost" style="padding:0px; margin:0px !important; outline:none;"> </div>
@@ -29,6 +29,12 @@
 
     <script src="./_js/vendors.js"></script>
     <script src="./_js/thesis.js"></script>
+
+
+
+    <!--------------------------------------------------------------------------->
+
+
     <script>
         function toggle_Mode() {
             const table = document.getElementById('hs-table');

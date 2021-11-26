@@ -13,12 +13,10 @@ class VM {
         this.password = ko.observable();
         this.emp_ID = ko.observable();
         this.ID = ko.observable();
-        this.endPoint = "https://thesis-api.azurewebsites.net/Thesis/GetProgram/1/2021/5";
-
     }
-
+    //=========================================================================
+    
     async _login(un, ps) {
-        debugger;
         let request = "https://thesis-api.azurewebsites.net/Thesis/Login"
         try {
             let options = {
