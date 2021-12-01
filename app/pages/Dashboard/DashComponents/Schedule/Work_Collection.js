@@ -29,7 +29,7 @@ export class Work_Collection {   //building whole month
 
 // [ 
     
-//     {"Date": "2021-08-01", "z":2, "t":0 },
+
 //     {"Date": "2021-08-02", "z":3, "t":1 },
 //     {"Date": "2021-08-03", "z":3, "t":0 },
 //     {"Date": "2021-08-04", "z":1, "t":0 },

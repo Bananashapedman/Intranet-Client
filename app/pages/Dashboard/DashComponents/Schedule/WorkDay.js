@@ -2,8 +2,8 @@ import ko from 'knockout';
 
 export class WorkDay {                     //building a day
 
-    constructor(obj) {
-        this.date = obj.Date
+    constructor(obj) {   //     {"Date": "2021-08-01", "z":2, "t":0 },
+        this.date = obj.Date  
         this.z = obj.z
         this.t = obj.t
         this.m_Ar = [ "January","February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -32,7 +32,6 @@ export class WorkDay {                     //building a day
             }
      
         });
-
     }
 
     _month() {

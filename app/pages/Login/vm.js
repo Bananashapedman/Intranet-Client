@@ -14,7 +14,7 @@ class VM {
         this.emp_ID = ko.observable();
         this.ID = ko.observable();
     }
-    //=========================================================================
+     //=========================================================================
     
     async _login(un, ps) {
         let request = "https://thesis-api.azurewebsites.net/Thesis/Login"
@@ -38,6 +38,7 @@ class VM {
             alert(e.message);
         }
     }
+    //------------------------------------------------------------------------- 
 
     async _onLogin() {
         debugger;
@@ -51,6 +52,7 @@ class VM {
         }
     }
 
+    //------------------------------------------------------------------------- 
 
     navigateDashboard() {
         this.showLoader(false);
@@ -58,15 +60,20 @@ class VM {
         this._PageRoot.currentPage('host-dashboard');
     }
 
+    //------------------------------------------------------------------------- 
+
     navigateMainPage() {
         this._PageRoot.currentPage('host-site');
         config.site_body();
     }
 
+    //------------------------------------------------------------------------- 
+
     _onClickAction() {
         console.log('hello');
     }
 
+    //------------------------------------------------------------------------- 
 
     _showPass() {
         let pwd = document.getElementById('pwd');
@@ -79,6 +86,7 @@ class VM {
     }
 }
 
+//=============================================================================
 
 ko.components.register("host-login", {
 

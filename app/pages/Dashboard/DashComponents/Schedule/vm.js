@@ -50,9 +50,9 @@ class VM {
         config._triggerSuccess();
     }
 
-    //------------------------------------------------------------------------- 
     //requesting a day off
-    async _fetchDayOff() {
+    //------------------------------------------------------------------------- 
+       async _fetchDayOff() {
         let endPoint_Change = `${this.endPoint_Change}/${config.employee_id}/${this.day_obj().date}/${this.day_obj().z}/${0}`;
         await this._callFetchService(endPoint_Change, false);
         if (this.curDate.getMonth() == month) {
@@ -66,6 +66,7 @@ class VM {
 
     //-------------------------------------------------------------------------
     async _fetchProgram(IsNext) {
+        debugger;
         this.curtain_table(true);
         let month_selection = null;
 
@@ -137,8 +138,8 @@ class VM {
         this._fixedCurtain(ele);
     }
 
+    
     //-------------------------------------------------------------------------
-    //handling schedule changes
 
     grab_day(day_obj) {
         this.day_obj(day_obj);
@@ -187,7 +188,7 @@ class VM {
     }
 
      //styling components
-    //-------------------------------------------------------------------------
+    //=========================================================================
     curtain_drop() {
 
         document.getElementById('curtain').classList.add('hide-curtain');
@@ -208,7 +209,7 @@ class VM {
         });
 
     }
-    //============================================================================
+    //-------------------------------------------------------------------------
 
     startWatching(element) {
         this.printDiv = element;
@@ -226,6 +227,7 @@ class VM {
 }
 
 
+    //=========================================================================
 ko.components.register("dash-schedule", {
     viewModel: VM,
     template: template
