@@ -23,6 +23,7 @@
     height:600px;
     width:400px;
     z-index:1000 !important;
+    border-radius: none;
    
 }
 .request-change.light{
@@ -88,7 +89,7 @@
     .request-change.container-fluid{
         
         max-width: 400px;
-        height:800px;
+        height:650px;
         border-radius:15px;
         margin:90px 10px 0px 10px;
     }

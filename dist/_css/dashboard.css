@@ -273,7 +273,7 @@ table{
     overflow-y: auto;
     margin:0;
     height:60vh;
-    max-width: 1000px;
+    max-width: 750px;
     min-height:10px;
     padding:0px !important;
     position:relative;
@@ -297,7 +297,7 @@ table{
 .fix-head-foot{
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 0.2), 0 6px 20px 0 rgb(0 0 0 / 0.19);
     border-radius:10px;
-    max-width:1000px;
+    max-width:750px;
     margin:0;
     padding:0px;
    
@@ -492,6 +492,9 @@ table{
         justify-content: center;
         
     }
+    .table-flow{
+        height:70vh;
+    }
   
 
 
@@ -501,7 +504,7 @@ table{
 @media only screen and (min-width: 1400px){
 
     .table-flow{
-        max-width:1000px;
+        max-width:750px;
     }
 
 }
