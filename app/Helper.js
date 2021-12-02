@@ -10,6 +10,7 @@ class HELP{
         this.current_Month=this.d.getMonth()+1;
         this.next_Month=this.calc_Next_Month();
         this.current_Year=this.d.getFullYear();
+        this.next_Year=this.current_Year+1;
         this.month_array = ["January","February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         this.employee_name=ko.observable();
         this.employee_face=ko.observable();
@@ -45,7 +46,8 @@ class HELP{
 
     calc_Next_Month() {
         let _d = this.d.getMonth()+1;
-        _d!=12 ? _d++ : _d=0;
+        console.log(_d);
+        _d!=12 ? _d++ : _d=1;
         return _d;
     }
 

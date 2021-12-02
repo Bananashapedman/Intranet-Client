@@ -66,7 +66,7 @@ class VM {
 
     //-------------------------------------------------------------------------
     async _fetchProgram(IsNext) {
-        debugger;
+        let endPoint=null;
         this.curtain_table(true);
         let month_selection = null;
 
@@ -76,9 +76,18 @@ class VM {
         }
         else {
             month_selection = config.next_Month;
+            console.log(month_selection);
             this.show_month((config.display_month(month_selection - 1)));
+            }
+
+        if (IsNext===true && config.current_Month==12){
+             endPoint = `${this.endPoint}/${config.employee_id}/${config.next_Year}/${month_selection}`
+            console.log(endPoint);
+        } 
+        else{
+             endPoint = `${this.endPoint}/${config.employee_id}/${config.current_Year}/${month_selection}`
+
         }
-        let endPoint = `${this.endPoint}/${config.employee_id}/${config.current_Year}/${month_selection}`
         let response = await this._callFetchService(endPoint, true);
        
         let ar = JSON.parse(response[0].Program);
