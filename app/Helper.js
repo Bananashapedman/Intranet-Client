@@ -46,7 +46,6 @@ class HELP{
 
     calc_Next_Month() {
         let _d = this.d.getMonth()+1;
-        console.log(_d);
         _d!=12 ? _d++ : _d=1;
         return _d;
     }

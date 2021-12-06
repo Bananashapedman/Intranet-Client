@@ -239,12 +239,10 @@
 
 /*table div footer*/
 
-
-
 i{cursor:pointer;}
 
 
-/*container for content fill*/
+/*SPA container*/
 .content{
   
     height:100vh; 
@@ -520,94 +518,7 @@ table{
 
 
 
-/*pagination keyframes*/
-
-
-@keyframes cycle {
-    0% {
-      left: 0px;
-    }
-    4% {
-        left: 0px;
-    }
-    16% {
-        left: 0px;
-      opacity: 1;
-      z-index: 0;
-    }
-    20% {
-        left: 325px;
-      opacity: 0;
-      z-index: 0;
-    }
-    21% {
-        left: -325px;
-      opacity: 0;
-      z-index: -1;
-    }
-    50% {
-        left: -325px;
-      opacity: 0;
-      z-index: -1;
-    }
-    92% {
-        left: -325px;
-      opacity: 0;
-      z-index: 0;
-    }
-    96% {
-        left: -325px;
-      opacity: 0;
-    }
-    100% {
-        left: 0px;
-      opacity: 1;
-    }
-  }
-  
-  @keyframes cycle2 {
-    0% {
-        left: -325px;
-      opacity: 0;
-    }
-    16% {
-        left: -325px;
-      opacity: 0;
-    }
-    20% {
-        left: 0px;
-      opacity: 1;
-    }
-    24% {
-        left: 0px;
-      opacity: 1;
-    }
-    36% {
-        left: 0px;
-      opacity: 1;
-      z-index: 0;
-    }
-    40% {
-        left: 325px;
-      opacity: 0;
-      z-index: 0;
-    }
-    41% {
-        left: -325px;
-      opacity: 0;
-      z-index: -1;
-    }
-    100% {
-        left: -325px;
-      opacity: 0;
-      z-index: -1;
-    }
-  }
-
-
-  /*powered by logo*/
-
-  .developed{
+ .developed{
       display:flex;
       flex-direction: column;
       justify-content: center;
